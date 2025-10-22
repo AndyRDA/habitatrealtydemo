@@ -107,7 +107,7 @@ content:
           format: yyyy/MM/dd # Ensures date consistency
       - name: agent
         label: Primary Agent
-        type: String
+        type: string
 
       # Property Metrics and Characteristics
       - name: propertyType
@@ -218,7 +218,7 @@ content:
         type: date
       - name: agent
         label: Primary Agent
-        type: String
+        type: string
 
       # Rental-Specific Terms
       - name: occupationDate
