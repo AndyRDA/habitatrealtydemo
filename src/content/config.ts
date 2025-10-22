@@ -28,6 +28,7 @@ const infopages = defineCollection({
   schema: z.object({
     page: z.string(),
     pubDate: z.date(),
+    body: z.string()
   }),
 });
 
@@ -157,6 +158,7 @@ const postsCollection = defineCollection({
         alt: z.string(),
       }),
       tags: z.array(z.string()),
+      body: z.string()
     }),
 });
 

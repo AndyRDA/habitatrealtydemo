@@ -67,6 +67,9 @@
             "type": "string"
           }
         },
+        "body": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
@@ -78,7 +81,8 @@
         "author",
         "image",
         "avatar",
-        "tags"
+        "tags",
+        "body"
       ],
       "additionalProperties": false
     }

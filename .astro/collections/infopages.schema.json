@@ -23,13 +23,17 @@
             }
           ]
         },
+        "body": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
       },
       "required": [
         "page",
-        "pubDate"
+        "pubDate",
+        "body"
       ],
       "additionalProperties": false
     }

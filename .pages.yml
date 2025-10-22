@@ -189,6 +189,9 @@ content:
       fields: [listingNumber, title, rentalPrice, occupationDate] # Fields visible in list view
     fields:
       # Core Listing Information
+      - name: projectName
+        label: Project Name
+        type: string
       - name: title
         label: Property Title (e.g., 3 Bedroom House to Rent)
         type: string 
