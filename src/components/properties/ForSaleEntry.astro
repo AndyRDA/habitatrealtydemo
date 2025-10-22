@@ -1,0 +1,63 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Foundations
+import { formatDate, formatNumber } from "@/components/foundations/scripts/HelperFunctions";
+
+const { projectName, url, address, image, details, price, isAddressShown} = {
+  url: "/for-sale/" + Astro.props.post.slug,
+  price: formatNumber(Astro.props.post.data.price),
+  image: Astro.props.post.data.mainImage.url,
+  address: Astro.props.post.data.address,
+  isAddressShown: Astro.props.post.data.isAddressShown,
+  details: [
+    {key: 'Area', value: Astro.props.post.data.location},
+    {key: 'Erf Size', value: Astro.props.post.data.erfSize + ' m²'},
+    {key: 'Bedrooms', value: Astro.props.post.data.bedrooms},
+    {key: 'Bathrooms', value: Astro.props.post.data.bathrooms},
+  ],
+  projectName: Astro.props.post.data.projectName,
+};
+---
+
+<a
+  href={url}
+  title={projectName}
+  class="text-xs 2xl:text-sm duration-300  rounded-xl shadow-lg hover:shadow-xl hover:shadow-accent-100 overflow-hidden"
+>
+  <div class="relative overflow-hidden">
+    <Image
+      width={400}
+      height={400}
+      src={image}
+      alt={projectName}
+      class="aspect-[4/3] object-cover object-center relative group-hover:scale-110 transition-transform duration-500"
+    />
+    <div class="bg-white absolute bottom-0 right-0 p-4 w-auto">
+      More information
+    </div>
+  </div>
+  <dl class="w-full divide-y border-b border-base-200 divide-base-200 p-6">
+    <div class="gap-4 py-4">
+      <dt class="text-base-900 text-2xl">{projectName}</dt>
+      <!-- <dd class="text-base-500 text-base">{projectName}</dd> -->
+    </div>
+    <div class="gap-4 py-4">
+      <dt class="text-base-900">Address</dt>
+      <dd class="text-base-500">{address && isAddressShown ? address : "Contact agent for address"}</dd>
+    </div>
+    {
+      details.map((detail) => (
+        <div class="gap-4 py-4 grid grid-cols-2 md:grid-cols-4 justify-between">
+          <dt class="text-base-900">{detail.key}</dt>
+          <dd class="text-base-500">{detail.value}</dd>
+        </div>
+      ))
+    }
+    <div class="gap-4 py-4">
+      <dt class="text-base-900">Price</dt>
+      <dd class="text-base-500">R {price}</dd>
+    </div>
+  </dl>
+  
+</a>

@@ -1,0 +1,177 @@
+{
+  "$ref": "#/definitions/sale",
+  "definitions": {
+    "sale": {
+      "type": "object",
+      "properties": {
+        "projectName": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "isAddressShown": {
+          "type": "boolean"
+        },
+        "listingNumber": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "price": {
+          "type": "number"
+        },
+        "agent": {
+          "type": "string"
+        },
+        "pubDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "propertyType": {
+          "type": "string",
+          "enum": [
+            "House",
+            "Town House",
+            "Apartment / Flat",
+            "Commercial",
+            "Industrial",
+            "Farm",
+            "Land"
+          ]
+        },
+        "bedrooms": {
+          "type": "number"
+        },
+        "bathrooms": {
+          "type": "number"
+        },
+        "garages": {
+          "type": "number"
+        },
+        "parking": {
+          "type": "number"
+        },
+        "erfSize": {
+          "type": "number"
+        },
+        "floorSize": {
+          "type": "number"
+        },
+        "isStandalone": {
+          "type": "boolean"
+        },
+        "hasPool": {
+          "type": "boolean"
+        },
+        "hasGarden": {
+          "type": "boolean"
+        },
+        "hasFibre": {
+          "type": "boolean"
+        },
+        "hasSolar": {
+          "type": "boolean"
+        },
+        "hasBackupPower": {
+          "type": "boolean"
+        },
+        "hasADU": {
+          "type": "boolean"
+        },
+        "body": {
+          "type": "string"
+        },
+        "mainImage": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
+        "aboutImages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "url",
+              "alt"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectName",
+        "title",
+        "address",
+        "location",
+        "city",
+        "isAddressShown",
+        "listingNumber",
+        "price",
+        "agent",
+        "pubDate",
+        "propertyType",
+        "bedrooms",
+        "bathrooms",
+        "garages",
+        "parking",
+        "erfSize",
+        "floorSize",
+        "isStandalone",
+        "hasPool",
+        "hasGarden",
+        "hasFibre",
+        "hasSolar",
+        "hasBackupPower",
+        "hasADU",
+        "body",
+        "mainImage",
+        "aboutImages"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

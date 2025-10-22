@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import AgentsLayout from "../../layouts/AgentsLayout.astro";
+export async function getStaticPaths() {
+  const agents = await getCollection("agents");
+  const paths = agents.map((page) => {
+    return {
+      params: { slug: page.slug },
+      props: { page },
+
+      trailingSlash: false,
+    };
+  });
+  return paths;
+}
+const { page } = Astro.props;
+const { Content } = await page.render();
+---
+
+<AgentsLayout frontmatter={page.data}>
+  <Content />
+</AgentsLayout>

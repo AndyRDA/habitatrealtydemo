@@ -1,0 +1,104 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import HeroImage from "@/images/hero3.png";
+// Foundations
+import Text from "@/components/foundations/elements/Text.astro";
+import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+
+const whyus = [
+  {
+    title: "Property Sales",
+    subtitle:
+      "Expert guidance through the entire property selling process with competitive commission rates and professional marketing.",
+  },
+  {
+    title: "Property Rentals",
+    subtitle:
+      "Comprehensive rental management services including tenant screening, lease agreements, and ongoing property maintenance.",
+  },
+  {
+    title: "Investment Advisory",
+    subtitle:
+      "Strategic investment advice to help you build a profitable property portfolio in high-growth areas.",
+  },
+  {
+    title: "Bond Origination",
+    subtitle:
+      "Assistance with home loan applications and bond calculations tailored to South African banking requirements.",
+  },
+  {
+    title: "Property Management",
+    subtitle:
+      "Full-service property management including maintenance, tenant relations, and financial reporting.",
+  },
+  {
+    title: "Market Analysis",
+    subtitle:
+      "Detailed market reports and property valuations based on current South African real estate trends.",
+  },
+];
+---
+
+<section class="overflow-hidden">
+  <Wrapper variant="standard" class="pb-12">
+    <div class="relative shadow-lg rounded-lg overflow-hidden">
+      <Image
+        src={HeroImage}
+        alt="#_"
+        width={1500}
+        height={1000}
+        class="w-full h-[60vh] 2xl:h-[75vh] object-cover relative"
+      />
+      <div
+        class="absolute bg-white bottom-0 right-0 p-8 w-full md:max-w-xs flex flex-col md:rounded-tl-lg"
+      >
+        <Text tag="h2" variant="displayMD">Habitat Realty</Text>
+        <div>
+          <Text tag="a" variant="textL" href="tel:+27 83 678 8877"
+            >083 678 8877</Text
+          >
+        </div>
+      </div>
+    </div>
+    <Text
+      tag="h1"
+      variant="displayXL"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      class="text-balance font-medium tracking-tighter text-base-900 mt-12"
+    >
+      Discover your dream home. Explore our real estate listings today
+    </Text>
+
+    <div class="grid lg:grid-cols-3 pt-8 mt-8 border-t border-base-200">
+      <Text tag="h2" variant="displayMD" class="font-semibold text-base-900"
+        >Why choose us</Text
+      >
+      <div class="lg:col-span-2 grid lg:grid-cols-2 lg:col-start-2 gap-8">
+        {
+          whyus.map((whyus) => (
+            <>
+              <div class=" flex flex-col ">
+                <Text
+                  tag="h3"
+                  variant="textXL"
+                  class=" font-medium text-base-900       "
+                >
+                  {whyus.title}
+                </Text>
+                <Text
+                  tag="p"
+                  variant="textBase"
+                  class="mt-6  text-base-500 text-balance"
+                >
+                  {whyus.subtitle}
+                </Text>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>

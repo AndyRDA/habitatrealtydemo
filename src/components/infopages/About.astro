@@ -1,0 +1,249 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import About1 from "@/images/about/1.jpg";
+import About2 from "@/images/about/2.jpg";
+import About3 from "@/images/about/3.jpg";
+import LogoCloud from "@/components/testimonials/logoCloud.astro";
+// Foundations
+import Text from "@/components/foundations/elements/Text.astro";
+import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+
+const aboutImages = [
+  {
+    url: About1,
+    alt: "#_",
+  },
+  {
+    url: About2,
+    alt: "#_",
+  },
+  {
+    url: About3,
+    alt: "#_",
+  },
+];
+const intro = [
+  {
+    title:
+      "Habitat Realty is Danmark’s global real estate marketplace for homes and real estates for sale in Danmark. Homes and real estates in Danmark in all price ranges and all real estates types are accepted to publish.",
+  },
+  {
+    title:
+      " We encourage the real estate agents to publish a variation of homes and real estates as houses, cottages, apartments, farms, plots and commercial properties.",
+  },
+  {
+    title:
+      " Each real estate agent is responsible for the publication and information about the real estates. All homes and real estates marketed on Habitat Realty are for sale in Danmark. Every day, people from all over the world visit Habitat Realty to find homes and real estates.",
+  },
+  {
+    title:
+      "From the family looking for a new home to the perfect summer house to spend the free time in. Investors looking for the expensive luxury real estate to commercial properties to invest in. Habitat Realty – Danmark’s global real estate marketplace is a complement to the usual housing marketplaces in Sweden",
+  },
+];
+const stats = [
+  {
+    title: "84",
+    subtitle: "Countries & Territories",
+  },
+  {
+    title: "1,115",
+    subtitle: "Offices Worldwide",
+  },
+  {
+    title: "26,500",
+    subtitle: "Sales Associates",
+  },
+  {
+    title: "$143B",
+    subtitle: "Annual Sales (USD)",
+  },
+];
+const whatweoffer = [
+  {
+    title: "For you as a real estate agent in Danmark",
+    subtitle:
+      "Habitat Realty helps you to market Swedish homes and real estate globally through this digital marketplace. With a simple click in your brokerage system, your houses or real estate can be published on Danmarks global marketplace, Habitat Realty.",
+  },
+  {
+    title: "For you who want to buy a home or real estate in Danmark",
+    subtitle:
+      "Habitat Realty is a marketplace for homes and real estates in Danmark, where you can navigate around and take advantage of published housing and real estates that are for sale. All published homes and real estates has a responsible real estate agent that you can contact if you are interested to buy.",
+  },
+];
+const whoweare = [
+  {
+    title: "Initiator",
+    subtitle:
+      "The team behind Habitat Realty have many years of experience working together with real estate agents and housing companies. We have great experience in development, technology, digitalization and have also worked with internet. In this context we have long experience of traditional marketing and e-marketing.",
+  },
+  {
+    title: "Developing Team",
+    subtitle:
+      "Habitat Realty has teams located in several parts of the world working on development and search optimization. Our strength is our knowledge and understanding of behavior globally reflected through our presence both inside and outside Danmark.",
+  },
+  {
+    title: "Partners",
+    subtitle:
+      "Habitat Realty has many partners. We are presently connected to Vitec and MSPEC’s brokerage systems. We work with marketing partners worldwide to achieve the best marketing of our objects in support of our promise to the market to provide up to date services marketing attractive properties globall",
+  },
+];
+---
+
+<section class="overflow-hidden">
+  <Wrapper class="pb-12 lg:pt-32">
+    <Text
+      tag="h1"
+      variant="displayXL"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      class="text-base-900"
+    >
+      About us
+    </Text>
+    <div class="grid lg:grid-cols-3 pt-8 mt-40 border-t border-base-200">
+      <div
+        class="lg:col-span-2 lg:col-start-2"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
+        <Text tag="h3" variant="displaySM" class="font-medium text-base-900">
+          Weather you are looking for a new home, apartment, to sell or rent, we
+          can help in every aspect of your real estate journey.
+        </Text>
+        <Text tag="p" variant="textBase" class="mt-6 text-pretty text-base-500">
+          We have found the perfect home for many of our clients. We are a happy
+          and friendly team that will help you find your dream home or sell your
+          property.
+        </Text>
+      </div>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        class="col-span-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"
+      >
+        {
+          aboutImages.map((image, index) => (
+            <Image
+              src={image.url}
+              alt={image.alt}
+              width={400}
+              height={400}
+              class="aspect-[4/3] group-hover:scale-110 transition-transform object-cover object-center duration-500"
+            />
+          ))
+        }
+      </div>
+    </div>
+    <LogoCloud class="py-12" />
+  </Wrapper>
+</section>
+<section class="overflow-hidden">
+  <Wrapper variant="standard" class="pb-12">
+    <div class="grid lg:grid-cols-3 pt-8 mt-40 border-t border-base-200">
+      <div class="lg:col-span-2 lg:col-start-2 space-y-8">
+        {
+          intro.map((intro) => (
+            <>
+              <Text tag="p" variant="textXL" class=" text-base-600 ">
+                {intro.title}
+              </Text>
+            </>
+          ))
+        }
+      </div>
+      <dl
+        class="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mt-28 lg:grid-cols-4 lg:col-start-2 lg:col-span-2"
+      >
+        {
+          stats.map((stats) => (
+            <>
+              <div class="flex flex-col-reverse gap-y-3 border-l border-base-200 pl-6">
+                <dt>
+                  <Text tag="h3" variant="textSM" class="text-base-500">
+                    {stats.subtitle}
+                  </Text>
+                </dt>
+                <dd>
+                  <Text
+                    tag="p"
+                    variant="displaySM"
+                    class="text-base-900  font-medium"
+                  >
+                    {stats.title}
+                  </Text>
+                </dd>
+              </div>
+            </>
+          ))
+        }
+      </dl>
+    </div>
+  </Wrapper>
+</section>
+<section class="overflow-hidden">
+  <Wrapper variant="standard" class="pb-12">
+    <div class="grid lg:grid-cols-3 pt-8 mt-40 border-t border-base-200">
+      <Text tag="h2" variant="textXL" class="font-medium text-base-900"
+        >What we offer</Text
+      >
+      <div class="lg:col-span-2 grid lg:grid-cols-2 gap-8">
+        {
+          whatweoffer.map((whatweoffer) => (
+            <>
+              <div class=" flex flex-col ">
+                <Text
+                  tag="h3"
+                  variant="textXL"
+                  class="font-medium text-base-900 "
+                >
+                  {whatweoffer.title}
+                </Text>
+                <Text
+                  tag="p"
+                  variant="textBase"
+                  class="mt-6 text-pretty text-base-500 "
+                >
+                  {whatweoffer.subtitle}
+                </Text>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>
+<section class="overflow-hidden">
+  <Wrapper variant="standard" class="pb-12">
+    <div class="grid lg:grid-cols-3 pt-8 mt-40 border-t border-base-200">
+      <Text tag="h2" variant="textXL" class="font-medium text-base-900"
+        >For who</Text
+      >
+      <div class="lg:col-span-2 grid lg:grid-cols-1 lg:col-start-3 gap-8">
+        {
+          whoweare.map((whoweare) => (
+            <>
+              <div class=" flex flex-col ">
+                <Text
+                  tag="h3"
+                  variant="textXL"
+                  class="font-medium text-base-900 "
+                >
+                  {whoweare.title}
+                </Text>
+                <Text
+                  tag="p"
+                  variant="textBase"
+                  class="mt-6 text-pretty text-base-500 "
+                >
+                  {whoweare.subtitle}
+                </Text>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>

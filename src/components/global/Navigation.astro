@@ -1,0 +1,235 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import House1 from "@/images/house1.png";
+import Agent1 from "@/images/agent1.png";
+import HRtext from "@/components/assets/HRtext.svg";
+
+import Logo from "@/components/assets/Logo.astro";
+// Foundations
+import Text from "@/components/foundations/elements/Text.astro";
+import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+// Components
+import Entries2 from "@/components/blog/Entries2.astro";
+// Content
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+const whatweoffer = [
+	{
+		title: "Meet a local expert who can help your journey",
+		subtitle:
+			"Our network of local real estate professionals apply their local market knowledge to create a comprehensive and customized plan for your home. Find an agent who is closest you and learn their local expertise.",
+		link: { href: "/agents/home", text: "See all agents" },
+		image: {
+			url: Agent1,
+			alt: "#_",
+		},
+	},
+	{
+		title: "Access our local expertise and exceptional service",
+		subtitle:
+			"Rooted in the Western Cape community, we serve every segment of the market - from luxury to entry-level - with clarity, care, and ethical efficiency. Our relationship first approach ensures that every client and partner is empowered by transparent service, guided by local expertise, and supported every step of the way.",
+		link: { href: "/forms/contact", text: "Sell your property" },
+		image: {
+			url: House1,
+			alt: "#_",
+		},
+	},
+];
+const navigation = [
+	{
+		link: { href: "/", text: "Home" },
+	},
+	{
+		link: { href: "/for-sale/home", text: "Properties for sale" },
+	},
+	{
+		link: { href: "/agents/home", text: "Meet our agents " },
+	},
+	{
+		link: { href: "/for-rent/home", text: "Properties for rent" },
+	},
+	{
+		link: { href: "/forms/sell-property", text: "Sell your property " },
+	},
+	{
+		link: { href: "/forms/contact", text: "Contact us " },
+	},
+];
+---
+
+<section x-data="{ expanded: false }">
+	<Wrapper class="pt-6">
+		<div class="relative">
+			<div class="flex items-center justify-between w-full">
+				<a
+					href="/"
+					aria-label="Go to homepage"
+					class="flex items-center justify-center gap-1"
+				>
+					<span class="sr-only">Go to homepage</span>
+					<Logo class="size-8 text-base-900" />
+					<div
+						class="flex flex-col lg:items-center lg:gap-2 h-full "
+					>
+						<HRtext class="w-28" />
+					</div>
+				</a>
+
+				<div
+					class="hidden lg:flex gap-2 lg:gap-4 text-base-900 uppercase text-xs font-medium lg:text-sm"
+				>
+					<a class="hover:text-base-500 " href="/for-sale/home">
+						Find Your new Home
+					</a>
+				</div>
+				<div class="order-last">
+					<button
+						id="menubutton"
+						type="button"
+						class="grow flex items-center h-14 group"
+						@click="expanded = !expanded"
+						:aria-expanded="expanded"
+						aria-controls="menu"
+						aria-label="Toggle navigation menu"
+					>
+						<span class="sr-only">Toggle navigation menu</span>
+						<div
+							class="p-1.5 group-focus-visible:ring group-focus-visible:ring-indigo-300"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="fill-base-400 size-8 shrink-0 transition duration-300 ease-in-out"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="icon icon-tabler icons-tabler-outline icon-tabler-menu"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<path :class="{'opacity-0': expanded}" d="M4 8l16 0"></path>
+								<path d="M4 16l16 0"></path>
+							</svg>
+						</div>
+					</button>
+				</div>
+			</div>
+			<nav
+				id="menu"
+				role="navigation"
+				aria-labelledby="menubutton"
+				class="grid text-sm text-base-600 w-0 overflow-hidden ml-auto transition-all duration-500 ease-[cubic-bezier(.4,.0,.20,1)] [&[x-cloak]]:hidden border-b border-base-200 mb-4"
+				:class="expanded ? 'grid-rows-[1fr] opacity-100 w-full' : 'grid-rows-[0fr] opacity-0 invisible'"
+				x-cloak
+			>
+				<div
+					:class="expanded ? 'border-t border-base-200' : 'border-none'"
+					class="overflow-hidden"
+				>
+					<div
+						class="grid grid-cols-1 gap-8 lg:grid-cols-3 py-8 xl:divide-x xl:divide-base-200"
+					>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+							<div class="md:col-span-2">
+								<Text
+									tag="h2"
+									variant="textBase"
+									class="text-base-900 font-medium">Navigation</Text
+								>
+								<ul
+									class="list-none text-base-500 mt-4 text-base gap-1 list-inside grid grid-cols-1 md:grid-cols-2 lg:col-span-2"
+								>
+									{
+										navigation.map((navigation) => (
+											<>
+												<li>
+													<a
+														href={navigation.link.href}
+														class="hover:text-base-900  text-base-500 mt-auto flex gap-3 items-center justify-between"
+													>
+														{navigation.link.text}
+													</a>
+												</li>
+											</>
+										))
+									}
+								</ul>
+							</div>
+							<div class="hidden xl:block xl:col-span-2 xl:pr-8">
+								<Text
+									tag="h2"
+									variant="textBase"
+									class="text-base-900 font-medium">From the blog</Text
+								>
+								<ul
+									class="list-none text-base-500 mt-4 text-base space-y-1 list-inside"
+								>
+									{allPosts.slice(1, 2).map((post) => <Entries2 post={post} />)}
+								</ul>
+							</div>
+						</div>
+						<div
+							class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:col-span-2 xl:pl-8"
+						>
+							{
+								whatweoffer.map((whatweoffer) => (
+									<>
+										<div class="grid grid-cols-1 gap-8 2xl:grid-cols-2">
+											<div class="flex flex-col h-full justify-between">
+												<a href={whatweoffer.link.href}>
+													<Text
+														tag="h3"
+														variant="textBase"
+														class="  text-base-900 "
+													>
+														{whatweoffer.title}
+													</Text>
+													<Text
+														tag="p"
+														variant="textSM"
+														class="mt-2 text-pretty text-base-500"
+													>
+														{whatweoffer.subtitle}
+													</Text>
+												</a>
+												<div class="mt-8">
+													<a
+														href={whatweoffer.link.href}
+														class="text-base-900  hover:text-base-500 mt-auto flex gap-2 align-middle items-center justify-between w-full"
+													>
+														{whatweoffer.link.text}
+														<svg
+															width="31"
+															height="16"
+															viewBox="0 0 71 15"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+														>
+															<path
+																d="M0.996338 6.5C0.444053 6.5 -0.00366211 6.94772 -0.00366211 7.5C-0.00366211 8.05228 0.444053 8.5 0.996338 8.5V6.5ZM69.7739 8.20711C70.1645 7.81658 70.1645 7.18342 69.7739 6.79289L63.41 0.428932C63.0194 0.0384079 62.3863 0.0384079 61.9958 0.428932C61.6052 0.819456 61.6052 1.45262 61.9958 1.84315L67.6526 7.5L61.9958 13.1569C61.6052 13.5474 61.6052 14.1805 61.9958 14.5711C62.3863 14.9616 63.0194 14.9616 63.41 14.5711L69.7739 8.20711ZM0.996338 8.5H69.0668V6.5H0.996338V8.5Z"
+																fill="currentColor"
+															/>
+														</svg>
+													</a>
+												</div>
+											</div>
+											<Image
+												width={400}
+												height={400}
+												src={whatweoffer.image.url}
+												alt={whatweoffer.image.alt}
+												class="aspect-[4/3] hidden xl:block 2xl:aspect-[4/7] group-hover:scale-110 transition-transform object-cover object-top duration-500 rounded-xl"
+											/>
+										</div>
+									</>
+								))
+							}
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</Wrapper>
+</section>

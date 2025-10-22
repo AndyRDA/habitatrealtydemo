@@ -1,0 +1,347 @@
+# .pages.yml — Pages CMS config for your project
+# Images live in src/images/{agents,blog,brands,highlights,...}
+
+media:
+  name: images
+  label: Images
+  input: src/images
+  output: src/images
+  path: ""  
+  extensions: [png, jpg, jpeg, webp, svg]
+
+settings:
+  content:
+    merge: true
+
+content:
+  # ---------------------
+  # AGENTS
+  # ---------------------
+  - name: agents
+    label: Agents
+    type: collection
+    path: src/content/agents
+    filename: "{primary}.md"
+    view:
+      primary: name
+      fields: [name, role]
+      sort: [name]
+    fields:
+      - { name: name,   label: Name,  type: string, required: true }
+      - { name: role,   label: Role,  type: string }
+      - { name: intro,  label: Intro, type: text }
+      - name: contact
+        label: Contact
+        type: list
+        fields:
+          - { name: item, label: Item, type: string }
+      - name: languages
+        label: Languages
+        type: list
+        fields:
+          - { name: item, label: Language, type: string }
+      - name: stats
+        label: Stats
+        type: list
+        fields:
+          - { name: key,   label: Key,   type: string }
+          - { name: value, label: Value, type: string }
+      - name: images
+        label: Gallery
+        type: list
+        fields:
+          - { name: url, label: Image, type: image, options: { media: images, path: agents } } # src/images/agents
+          - { name: alt, label: Alt text, type: string }
+      - { name: office,        label: Office,        type: string }
+      - { name: officeAddress, label: Office Address, type: string }
+      - name: avatar
+        label: Avatar
+        type: object
+        fields:
+          - { name: url, label: Avatar, type: image, options: { media: images, path: agents } }
+          - { name: alt, label: Alt text, type: string }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # SALE
+  # ---------------------
+
+  # 1. Defining the Property Listings Collection
+  - name: sale
+    label: Property Listings
+    path: src/content/sale # Where new files are saved in your repository [3]
+    type: collection # Specifies this is a list of multiple entries [4]
+    filename: '{fields.listingNumber}-{fields.title}.md' # Pattern for saving files (e.g., 116494858-3-bedroom-house.md) [4]
+    view:
+      fields: [title, price, listingNumber, pubDate] # Fields visible in the list view [5]
+    fields:
+      # Core Listing Information
+      - name: projectName
+        label: Project Name
+        type: string
+      - name: title
+        label: Property Title (e.g., 3 Bedroom House for Sale)
+        type: string
+      - name: location
+        label: Area/Suburb (e.g., Klein Slangkop, Kommetjie)
+        type: string
+      - name: address
+        label: Address
+        type: string
+      - name: city
+        label: City / Town
+        type: string
+      - name: isAddressShown
+        label: Show Address On Listing?
+        type: boolean
+      - name: listingNumber
+        label: Listing Number
+        type: uuid 
+      - name: price
+        label: Price (ZAR)
+        type: number # Using the Number field type [7]
+      - name: pubDate
+        label: Listing Date
+        type: date # Using the Date field type [6]
+        options:
+          format: yyyy/MM/dd # Ensures date consistency
+      - name: agent
+        label: Primary Agent
+        type: String
+
+      # Property Metrics and Characteristics
+      - name: propertyType
+        label: Type of Property
+        type: select
+        options: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
+      - name: bedrooms
+        label: Bedrooms
+        type: number
+      - name: bathrooms
+        label: Bathrooms
+        type: number
+      - name: garages
+        label: Garages
+        type: number
+      - name: parking
+        label: Parking Bays
+        type: number
+      - name: erfSize
+        label: Erf Size (m²)
+        type: number
+      - name: floorSize
+        label: Floor Size (m²)
+        type: number
+      - name: isStandalone
+        label: Standalone Building?
+        type: boolean # Provides a simple True/False toggle or checkbox [7]
+  
+  # Property Features (External/Internal Features)
+      - name: hasPool
+        label: Pool Included
+        type: boolean 
+      - name: hasGarden
+        label: Garden Included
+        type: boolean 
+      - name: hasFibre
+        label: Fibre Internet Access
+        type: boolean 
+      - name: hasSolar
+        label: Solar Geyser/Power
+        type: boolean 
+      - name: hasBackupPower
+        label: Backup Battery / Inverter
+        type: boolean 
+      - name: hasADU
+        label: Additional Accommodation (e.g. Granny Flat, Staff Quarters)
+        type: boolean
+
+      # Description and Media
+      - name: body
+        label: Full Description (Stylish 3-Bedroom Home...)
+        type: rich-text # Provides a visual WYSIWYG editor for formatted text
+      - name: mainImage
+        label: Main Listing Photo
+        type: image
+        fields:
+          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
+          - { name: alt, label: Alt text, type: string }
+      - name: aboutImages
+        label: About Images
+        type: list
+        fields:
+          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
+          - { name: alt, label: Alt text, type: string }
+
+  
+
+  #----------------------
+  # Rentals
+  #----------------------
+ 
+  # 1. Defining the Rental Property Collection
+  - name: rentals
+    label: Rental Listings
+    path: src/content/rentals # Content stored in a 'rentals' directory
+    type: collection
+    filename: '{fields.listingNumber}-{fields.title}.md'
+    view:
+      fields: [listingNumber, title, rentalPrice, occupationDate] # Fields visible in list view
+    fields:
+      # Core Listing Information
+      - name: title
+        label: Property Title (e.g., 3 Bedroom House to Rent)
+        type: string 
+      - name: listingNumber
+        label: Listing Number
+        type: uuid 
+      - name: price
+        label: Monthly Rent (R)
+        type: number 
+      - name: address
+        label: Address
+        type: string
+      - name: location
+        label: Area/Suburb (e.g., Klein Slangkop, Kommetjie)
+        type: string
+      - name: city
+        label: City / Town
+        type: string
+      - name: isAddressShown
+        label: Show Address On Listing?
+        type: boolean
+      - name: pubDate
+        label: Listing Created Date
+        type: date
+      - name: agent
+        label: Primary Agent
+        type: String
+
+      # Rental-Specific Terms
+      - name: occupationDate
+        label: Occupation Date
+        type: date 
+      - name: leasePeriod
+        label: Lease Period
+        type: select 
+        options: [1 Month, 6 Months, 12 Months, 24 Months]
+      - name: depositRequirements
+        label: Deposit Requirements
+        type: string 
+        description: Specify deposit amount (e.g., 1 Month Deposit, R50,000)
+
+      # Property Metrics and Status
+      - name: propertyType
+        label: Type of Property
+        type: select 
+        options: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
+      - name: bedrooms
+        label: Bedrooms
+        type: number 
+      - name: bathrooms
+        label: Bathrooms
+        type: number 
+      - name: garages
+        label: Garages
+        type: number 
+      - name: parking
+        label: Parking Bays
+        type: number 
+      - name: erfSize
+        label: Erf Size (m²)
+        type: number 
+      - name: floorSize
+        label: Floor Size (m²)
+        type: number
+      - name: petsAllowed
+        label: Pet Friendly?
+        type: boolean 
+      - name: furnishedStatus
+        label: Furnishing Status
+        type: select 
+        options: [Furnished, Unfurnished]
+    
+      # Property Features (External/Internal Features)
+      - name: hasPool
+        label: Pool Included
+        type: boolean 
+      - name: hasGarden
+        label: Garden Included
+        type: boolean 
+      - name: hasFibre
+        label: Fibre Internet Access
+        type: boolean 
+      - name: hasSolar
+        label: Solar Geyser/Power
+        type: boolean 
+      - name: hasBackupPower
+        label: Backup Battery / Inverter
+        type: boolean 
+
+      # Description and Media
+      - name: body
+        label: Full Property Description
+        type: rich-text 
+      - name: mainImage
+        label: Main Listing Photo
+        type: image 
+        fields:
+          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
+          - { name: alt, label: Alt text, type: string }
+      - name: aboutImages
+        label: About Images
+        type: list
+        fields:
+          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
+          - { name: alt, label: Alt text, type: string }
+ 
+
+
+  # ---------------------
+  # POSTS
+  # ---------------------
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: src/content/posts
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: title
+      fields: [title, pubDate, author]
+      sort: [pubDate]
+      default: { sort: pubDate, order: desc }
+    fields:
+      - { name: title,       label: Title, type: string, required: true }
+      - { name: pubDate,     label: Publication Date, type: date }
+      - { name: description, label: Description, type: text }
+      - { name: author,      label: Author, type: string }
+      - name: image
+        label: Cover Image
+        type: object
+        fields:
+          - { name: url, label: Image, type: image, options: { media: images, path: blog } } # src/images/blog
+          - { name: alt, label: Alt text, type: string }
+      - name: avatar
+        label: Author Avatar
+        type: object
+        fields:
+          - { name: url, label: Avatar, type: image, options: { media: images, path: agents } }
+          - { name: alt, label: Alt text, type: string }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # INFO PAGES
+  # ---------------------
+  - name: infopages
+    label: Info Pages
+    type: collection
+    path: src/content/infopages
+    filename: "{primary}.md"
+    view:
+      primary: page
+      fields: [page, pubDate]
+    fields:
+      - { name: page,    label: Page, type: string, required: true }
+      - { name: pubDate, label: Publication Date, type: date }
+      - { name: body,    label: Body, type: rich-text }

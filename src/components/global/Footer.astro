@@ -1,0 +1,100 @@
+---
+// Assets
+import BigLogo from "@/components/assets/BigLogo.astro";
+// Foundations
+import Text from "@/components/foundations/elements/Text.astro";
+import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+const links = [
+  
+  {
+    type: "social",
+    items: [
+      { href: "#_", text: "X", target: "_blank" },
+      { href: "#_", text: "Facebook", target: "_blank" },
+      { href: "https://www.instagram.com/habitat.realty", text: "Instagram", target: "_blank" },
+      { href: "#_", text: "Linkedin", target: "_blank" },
+      { href: "#_", text: "Youtube", target: "_blank" },
+      { href: "#_", text: "Tiktok", target: "_blank" },
+      { href: "https://wa.me/27836788877", text: "WhatsApp", target: "_blank" },
+    ],
+  },
+  {
+    type: "properties",
+    items: [
+      { href: "/for-sale/home", text: "All properties for sale" },
+      { href: "/for-rent/home", text: "All properties for rent" },
+    ],
+  },
+  {
+    type: "navigation",
+    items: [
+      {
+        href: "/",
+        text: "Home",
+      },
+      {
+        href: "/agents/home",
+        text: "Agents",
+      },
+      {
+        href: "/forms/contact",
+        text: "Contact us",
+      },
+      
+    ],
+  },
+  {
+    type: "legal",
+    items: [
+      { href: "/infopages/privacy", text: "Privacy Policy" },
+      { href: "/infopages/terms", text: "Terms of Service" },
+      { href: "/infopages/dmca", text: "DMCA" },
+      { href: "/infopages/faq", text: "FAQ" },
+    ],
+  }
+];
+---
+
+<section>
+  <Wrapper class="pb-12 pt-40">
+    <BigLogo />
+    <div class="pt-8 mt-8 border-t border-base-200">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          links.map((linkGroup) => (
+            <div>
+              <Text tag="h3" variant="textBase" class=" text-base-900 ">
+                {linkGroup.type.charAt(0).toUpperCase() +
+                  linkGroup.type.slice(1)}{" "}
+                {/* Capitalize type */}
+              </Text>
+              <ul class="list-none text-base-500 mt-8 text-base gap-1 list-inside flex flex-col">
+                {linkGroup.items.map((item) => (
+                  <li>
+                    <a
+                      href={item.href} target={item.target || "_self"}
+                      class="hover:text-base-900  text-base-500 mt-auto flex gap-3 items-center justify-between"
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-base-200 space-y-2">
+      <span class="text-sm text-base-900" id="copyright">
+        Copyright © <span id="current-year"></span> Habitat Realty. All Rights Reserved.
+      </span>
+    </div>
+  </Wrapper>
+</section>
+<script type="module">
+  // Get the current year
+  const currentYear = new Date().getFullYear();
+  // Update the year in the span with id "current-year"
+  document.getElementById("current-year").textContent = currentYear;
+</script>

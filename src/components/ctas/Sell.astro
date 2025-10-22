@@ -1,0 +1,46 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import SellImage from "@/images/sell.png";
+// Foundations
+import Text from "@/components/foundations/elements/Text.astro";
+import Link from "@/components/foundations/elements/Link.astro";
+import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+---
+
+<section>
+  <Wrapper variant="standard" class="py-12">
+    <div class="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:items-center">
+      <Image
+        width={800}
+        height={1000}
+        src={SellImage}
+        alt="#_"
+        class="max-h-80 md:max-h-[80dvh] w-full object-cover"
+      />
+      <div
+        class="p-8 lg:p-20 h-full flex flex-col items-center justify-center outline outline-base-200"
+      >
+        <div>
+          <Text
+            tag="h3"
+            variant="displayMD"
+            class="text-balance font-medium text-base-900"
+          >
+            Real Estate. Real People. Real Results.
+          </Text>
+          <div class="mt-8 pt-8 border-t border-base-200">
+            <Text tag="p" variant="textBase" class="text-base-500">
+              Habitat Realty is not just a property brand. It's a promise. Reshaping the property journey for every homebuyer, seller and investor across the Western Cape.
+            </Text>
+          </div>
+          <div class="flex mt-8 gap-2">
+            <Link size="xxl" variant="default" href="/forms/sell-property">
+              Sell your property
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Wrapper>
+</section>
