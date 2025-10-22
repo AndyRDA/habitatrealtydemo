@@ -62,28 +62,13 @@
           ]
         },
         "leasePeriod": {
-          "type": "string",
-          "enum": [
-            "1 Month",
-            "6 Months",
-            "12 Months",
-            "24 Months"
-          ]
+          "type": "string"
         },
         "depositRequirements": {
           "type": "string"
         },
         "propertyType": {
-          "type": "string",
-          "enum": [
-            "House",
-            "Town House",
-            "Apartment / Flat",
-            "Commercial",
-            "Industrial",
-            "Farm",
-            "Land"
-          ]
+          "type": "string"
         },
         "bedrooms": {
           "type": "number"
@@ -107,11 +92,7 @@
           "type": "boolean"
         },
         "furnishedStatus": {
-          "type": "string",
-          "enum": [
-            "Furnished",
-            "Unfurnished"
-          ]
+          "type": "string"
         },
         "hasPool": {
           "type": "boolean"
