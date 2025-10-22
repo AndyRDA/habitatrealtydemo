@@ -49,7 +49,16 @@
           ]
         },
         "propertyType": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "House",
+            "Town House",
+            "Apartment / Flat",
+            "Commercial",
+            "Industrial",
+            "Farm",
+            "Land"
+          ]
         },
         "bedrooms": {
           "type": "number"
