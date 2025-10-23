@@ -321,16 +321,12 @@ content:
       - name: mainImage
         label: Main Listing Photo
         type: image 
-        fields:
-          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
-          - { name: alt, label: Alt text, type: string }
+
       - name: aboutImages
         label: About Images
         type: list
-        fields:
-          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
-          - { name: alt, label: Alt text, type: string }
- 
+        multiple: true
+        
 
 
   # ---------------------
