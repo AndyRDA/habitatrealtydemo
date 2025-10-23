@@ -114,7 +114,7 @@ content:
       # Property Metrics and Characteristics
       - name: propertyType
         label: Type of Property
-        # type: string
+        type: select
         options: 
           value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
       - name: bedrooms
@@ -244,7 +244,7 @@ content:
         type: date 
       - name: leasePeriod
         label: Lease Period
-        # type: string 
+        type: select
         options: 
           value: [1 Month, 6 Months, 12 Months, 24 Months]
       - name: depositRequirements
@@ -255,7 +255,7 @@ content:
       # Property Metrics and Status
       - name: propertyType
         label: Type of Property
-        # type: string
+        type: select
         options:
           value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
       - name: bedrooms
@@ -288,7 +288,7 @@ content:
         # type: string 
       - name: furnishedStatus
         label: Furnishing Status
-        # type: string 
+        type: select 
         options: 
           value: [Furnished, Unfurnished]
     
