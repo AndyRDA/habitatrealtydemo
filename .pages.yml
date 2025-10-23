@@ -93,15 +93,15 @@ content:
         type: string
       - name: isAddressShown
         label: Show Address On Listing?
-        # type: boolean
-        type: string
+        type: boolean
+        # type: string
       - name: listingNumber
         label: Listing Number
         type: uuid 
       - name: price
         label: Price (ZAR)
-        type: string
-        # type: number # Using the Number field type [7]
+        # type: string
+        type: number # Using the Number field type [7]
       - name: pubDate
         label: Listing Date
         type: date # Using the Date field type [6]
@@ -114,63 +114,63 @@ content:
       # Property Metrics and Characteristics
       - name: propertyType
         label: Type of Property
-        type: string
-        # options: 
-        #   value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
+        # type: string
+        options: 
+          value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
       - name: bedrooms
         label: Bedrooms
-        # type: number
-        type: string
+        type: number
+        # type: string
       - name: bathrooms
         label: Bathrooms
-        # type: number
-        type: string
+        type: number
+        # type: string
       - name: garages
         label: Garages
-        # type: number
-        type: string
+        type: number
+        # type: string
       - name: parking
         label: Parking Bays
-        # type: number
-        type: string
+        type: number
+        # type: string
       - name: erfSize
         label: Erf Size (m²)
-        # type: number
-        type: string
+        type: number
+        # type: string
       - name: floorSize
         label: Floor Size (m²)
-        # type: number
-        type: string
+        type: number
+        # type: string
       - name: isStandalone
         label: Standalone Building?
-        # type: boolean
-        type: string # Provides a simple True/False toggle or checkbox [7]
+        type: boolean
+        # type: string # Provides a simple True/False toggle or checkbox [7]
   
   # Property Features (External/Internal Features)
       - name: hasPool
         label: Pool Included
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasGarden
         label: Garden Included
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasFibre
         label: Fibre Internet Access
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasSolar
         label: Solar Geyser/Power
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasBackupPower
         label: Backup Battery / Inverter
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasADU
         label: Additional Accommodation (e.g. Granny Flat, Staff Quarters)
-        # type: boolean
-        type: string
+        type: boolean
+        # type: string
 
       # Description and Media
       - name: body
@@ -216,8 +216,8 @@ content:
         type: uuid 
       - name: price
         label: Monthly Rent (R)
-        # type: number
-        type: string 
+        type: number
+        # type: string 
       - name: address
         label: Address
         type: string
@@ -229,8 +229,8 @@ content:
         type: string
       - name: isAddressShown
         label: Show Address On Listing?
-        # type: boolean
-        type: string
+        type: boolean
+        # type: string
       - name: pubDate
         label: Listing Created Date
         type: date
@@ -244,9 +244,9 @@ content:
         type: date 
       - name: leasePeriod
         label: Lease Period
-        type: string 
-        # options: 
-        #   value: [1 Month, 6 Months, 12 Months, 24 Months]
+        # type: string 
+        options: 
+          value: [1 Month, 6 Months, 12 Months, 24 Months]
       - name: depositRequirements
         label: Deposit Requirements
         type: string 
@@ -255,64 +255,64 @@ content:
       # Property Metrics and Status
       - name: propertyType
         label: Type of Property
-        type: string
-        # options:
-        #   value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
+        # type: string
+        options:
+          value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
       - name: bedrooms
         label: Bedrooms
-        # type: number
-        type: string 
+        type: number
+        # type: string 
       - name: bathrooms
         label: Bathrooms
-        # type: number
-        type: string 
+        type: number
+        # type: string 
       - name: garages
         label: Garages
-        # type: number
-        type: string 
+        type: number
+        # type: string 
       - name: parking
         label: Parking Bays
-        # type: number
-        type: string 
+        type: number
+        # type: string 
       - name: erfSize
         label: Erf Size (m²)
-        # type: number
-        type: string 
+        type: number
+        # type: string 
       - name: floorSize
         label: Floor Size (m²)
-        # type: number
-        type: string
+        type: number
+        # type: string
       - name: petsAllowed
         label: Pet Friendly?
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: furnishedStatus
         label: Furnishing Status
-        type: string 
-        # options: 
-        #   value: [Furnished, Unfurnished]
+        # type: string 
+        options: 
+          value: [Furnished, Unfurnished]
     
       # Property Features (External/Internal Features)
       - name: hasPool
         label: Pool Included
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasGarden
         label: Garden Included
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasFibre
         label: Fibre Internet Access
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasSolar
         label: Solar Geyser/Power
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
       - name: hasBackupPower
         label: Backup Battery / Inverter
-        # type: boolean
-        type: string 
+        type: boolean
+        # type: string 
 
       # Description and Media
       - name: body
