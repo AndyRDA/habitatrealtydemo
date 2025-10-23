@@ -41,7 +41,8 @@ const sale = defineCollection({
       address: z.string(),
       location: z.string(),
       city: z.string(),
-      isAddressShown: z.boolean(), // Boolean from YAML
+      // isAddressShown: z.boolean(),
+      isAddressShown: z.string(),
       listingNumber: z.string().uuid(), // String/UUID from YAML
       // price: z.number(),
       price: z.string(),
@@ -64,15 +65,22 @@ const sale = defineCollection({
       erfSize: z.string(),
       // floorSize: z.number(),
       floorSize: z.string(),
-      isStandalone: z.boolean(), // Boolean from YAML
+      // isStandalone: z.boolean(),
+      isStandalone: z.string(),
 
       // --- Property Features (Mirroring YAML Boolean fields) ---
-      hasPool: z.boolean(),
-      hasGarden: z.boolean(),
-      hasFibre: z.boolean(),
-      hasSolar: z.boolean(),
-      hasBackupPower: z.boolean(),
-      hasADU: z.boolean(),
+      // hasPool: z.boolean(),
+      hasPool: z.string(),
+      // hasGarden: z.boolean(),
+      hasGarden: z.string(),
+      // hasFibre: z.boolean(),
+      hasFibre: z.string(),
+      // hasSolar: z.boolean(),
+      hasSolar: z.string(),
+      // hasBackupPower: z.boolean(),
+      hasBackupPower: z.string(),
+      // hasADU: z.boolean(),
+      hasADU: z.string(),
 
       // --- Description and Media ---
       // Rich-text/Markdown content is accessed separately in Astro, but the frontmatter field for the description is often the 'body'. 
@@ -107,7 +115,8 @@ const rentals = defineCollection({
       address: z.string(),
       location: z.string(),
       city: z.string(),
-      isAddressShown: z.boolean(),
+      // isAddressShown: z.boolean(),
+      isAddressShown: z.string(),
       pubDate: z.coerce.date(),
       agent: z.string(),
 
@@ -132,16 +141,22 @@ const rentals = defineCollection({
       erfSize: z.string(),
       // floorSize: z.number(),
       floorSize: z.string(),
-      petsAllowed: z.boolean(),
+      // petsAllowed: z.boolean(),
+      petsAllowed: z.string(),
       // furnishedStatus: z.enum(['Furnished', 'Unfurnished']),
       furnishedStatus: z.string(),
 
       // Property Features
-      hasPool: z.boolean(),
-      hasGarden: z.boolean(),
-      hasFibre: z.boolean(),
-      hasSolar: z.boolean(),
-      hasBackupPower: z.boolean(),
+      // hasPool: z.boolean(),
+      hasPool: z.string(),
+      // hasGarden: z.boolean(),
+      hasGarden: z.string(),
+      // hasFibre: z.boolean(),
+      hasFibre: z.string(),
+      // hasSolar: z.boolean(),
+      hasSolar: z.string(),
+      // hasBackupPower: z.boolean(),
+      hasBackupPower: z.string(),
 
       // Description and Media
       body: z.string(),

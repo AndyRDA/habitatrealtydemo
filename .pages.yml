@@ -93,7 +93,8 @@ content:
         type: string
       - name: isAddressShown
         label: Show Address On Listing?
-        type: boolean
+        # type: boolean
+        type: string
       - name: listingNumber
         label: Listing Number
         type: uuid 
@@ -142,27 +143,34 @@ content:
         type: string
       - name: isStandalone
         label: Standalone Building?
-        type: boolean # Provides a simple True/False toggle or checkbox [7]
+        # type: boolean
+        type: string # Provides a simple True/False toggle or checkbox [7]
   
   # Property Features (External/Internal Features)
       - name: hasPool
         label: Pool Included
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasGarden
         label: Garden Included
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasFibre
         label: Fibre Internet Access
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasSolar
         label: Solar Geyser/Power
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasBackupPower
         label: Backup Battery / Inverter
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasADU
         label: Additional Accommodation (e.g. Granny Flat, Staff Quarters)
-        type: boolean
+        # type: boolean
+        type: string
 
       # Description and Media
       - name: body
@@ -221,7 +229,8 @@ content:
         type: string
       - name: isAddressShown
         label: Show Address On Listing?
-        type: boolean
+        # type: boolean
+        type: string
       - name: pubDate
         label: Listing Created Date
         type: date
@@ -275,7 +284,8 @@ content:
         type: string
       - name: petsAllowed
         label: Pet Friendly?
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: furnishedStatus
         label: Furnishing Status
         type: string 
@@ -285,19 +295,24 @@ content:
       # Property Features (External/Internal Features)
       - name: hasPool
         label: Pool Included
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasGarden
         label: Garden Included
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasFibre
         label: Fibre Internet Access
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasSolar
         label: Solar Geyser/Power
-        type: boolean 
+        # type: boolean
+        type: string 
       - name: hasBackupPower
         label: Backup Battery / Inverter
-        type: boolean 
+        # type: boolean
+        type: string 
 
       # Description and Media
       - name: body
