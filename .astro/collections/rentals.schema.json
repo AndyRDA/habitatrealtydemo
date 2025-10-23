@@ -136,14 +136,10 @@
           "properties": {
             "url": {
               "type": "string"
-            },
-            "alt": {
-              "type": "string"
             }
           },
           "required": [
-            "url",
-            "alt"
+            "url"
           ],
           "additionalProperties": false
         },
@@ -154,14 +150,10 @@
             "properties": {
               "url": {
                 "type": "string"
-              },
-              "alt": {
-                "type": "string"
               }
             },
             "required": [
-              "url",
-              "alt"
+              "url"
             ],
             "additionalProperties": false
           }

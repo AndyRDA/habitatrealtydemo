@@ -161,15 +161,9 @@ const rentals = defineCollection({
       // Description and Media
       body: z.string(),
 
-      mainImage: z.object({
-        url: image(),
-      }),
+      mainImage: z.string(),
       
-      aboutImages: z.array(
-        z.object({
-          url: image(),
-        })
-      ),
+      aboutImages: z.string(),
     }),
 });
 
