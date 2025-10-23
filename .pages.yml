@@ -116,7 +116,7 @@ content:
         label: Type of Property
         type: select
         options: 
-          value: [ House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land ]
+          values: [ House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land ]
       - name: bedrooms
         label: Bedrooms
         type: number
@@ -246,7 +246,7 @@ content:
         label: Lease Period
         type: select
         options: 
-          value: [ 1 Month, 6 Months, 12 Months, 24 Months ]
+          values: [ 1 Month, 6 Months, 12 Months, 24 Months ]
       - name: depositRequirements
         label: Deposit Requirements
         type: string 
@@ -257,7 +257,7 @@ content:
         label: Type of Property
         type: select
         options:
-          value: [ House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land ]
+          values: [ House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land ]
       - name: bedrooms
         label: Bedrooms
         type: number
@@ -290,7 +290,7 @@ content:
         label: Furnishing Status
         type: select 
         options: 
-          value: [ Furnished, Unfurnished ]
+          values: [ Furnished, Unfurnished ]
     
       # Property Features (External/Internal Features)
       - name: hasPool
