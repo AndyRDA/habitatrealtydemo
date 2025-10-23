@@ -28,7 +28,7 @@ const infopages = defineCollection({
   schema: z.object({
     page: z.string(),
     pubDate: z.date(),
-    body: z.string()
+    body: z.string().optional()
   }),
 });
 
@@ -86,7 +86,7 @@ const sale = defineCollection({
       // Rich-text/Markdown content is accessed separately in Astro, but the frontmatter field for the description is often the 'body'. 
       // Assuming 'body' holds additional frontmatter text/metadata if you are not using the main content body.
       // If the rich-text content is intended to be the main Markdown body, you can omit 'body' from the schema.
-      body: z.string(), 
+      body: z.string().optional(), 
 
       // Image fields, matching the URL/Alt structure
       mainImage: z.object({
@@ -139,7 +139,7 @@ const rentals = defineCollection({
       // parking: z.string(),
       erfSize: z.number(),
       // erfSize: z.string(),
-      floorSize: z.number(),
+      floorSize: z.number().optional(),
       // floorSize: z.string(),
       petsAllowed: z.boolean(),
       // petsAllowed: z.string(),
@@ -159,14 +159,12 @@ const rentals = defineCollection({
       // hasBackupPower: z.string(),
 
       // Description and Media
-      body: z.string(),
+      body: z.string().optional(),
 
-      mainImage: z.string(),
+      mainImage: image(),
       
       aboutImages: z.array(
-        z.object({
-          url: image(),
-        })
+        image()
       )
     }),
 });
@@ -187,7 +185,7 @@ const postsCollection = defineCollection({
         alt: z.string(),
       }),
       tags: z.array(z.string()),
-      body: z.string()
+      body: z.string().optional()
     }),
 });
 

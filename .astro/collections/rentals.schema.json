@@ -135,7 +135,10 @@
           "type": "string"
         },
         "aboutImages": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "$schema": {
           "type": "string"
@@ -160,7 +163,6 @@
         "garages",
         "parking",
         "erfSize",
-        "floorSize",
         "petsAllowed",
         "furnishedStatus",
         "hasPool",
@@ -168,7 +170,6 @@
         "hasFibre",
         "hasSolar",
         "hasBackupPower",
-        "body",
         "mainImage",
         "aboutImages"
       ],

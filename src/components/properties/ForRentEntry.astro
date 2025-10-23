@@ -7,7 +7,9 @@ import { formatDate, formatNumber } from "@/components/foundations/scripts/Helpe
 const { projectName, url, address, image, details, price, isAddressShown} = {
   url: "/for-rent/" + Astro.props.post.slug,
   price: formatNumber(Astro.props.post.data.price),
-  image: Astro.props.post.data.mainImage.url,
+  image: Astro.props.post.data.mainImage
+    ? Astro.props.post.data.mainImage
+    : "/images/house1.png",
   address: Astro.props.post.data.address,
   isAddressShown: Astro.props.post.data.isAddressShown,
   details: [

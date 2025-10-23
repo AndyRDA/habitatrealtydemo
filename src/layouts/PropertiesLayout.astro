@@ -90,8 +90,8 @@ if(frontmatter.propertyType === 'Land') {
           data-aos="zoom-out"
           data-aos-duration="1500"
           class="w-full h-[60vh] 2xl:h-[75vh] object-cover mt-12 relative"
-          src={frontmatter.mainImage.url}
-          alt={frontmatter.mainImage.alt}
+          src={frontmatter.mainImage}
+          alt={frontmatter.projectName}
         />
         <a
           href="#details"
@@ -167,8 +167,8 @@ if(frontmatter.propertyType === 'Land') {
                         width={400}
                         height={400}
                         class="aspect-[4/3] group-hover:scale-110 transition-transform duration-500 object-cover object-center"
-                        src={image.url}
-                        alt={image.alt}
+                        src={image}
+                        alt={frontmatter.projectName}
                       />
                     </div>
                   ))

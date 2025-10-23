@@ -81,8 +81,7 @@
         "author",
         "image",
         "avatar",
-        "tags",
-        "body"
+        "tags"
       ],
       "additionalProperties": false
     }
