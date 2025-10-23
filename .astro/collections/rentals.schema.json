@@ -132,31 +132,10 @@
           "type": "string"
         },
         "mainImage": {
-          "type": "object",
-          "properties": {
-            "url": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "url"
-          ],
-          "additionalProperties": false
+          "type": "string"
         },
         "aboutImages": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "url": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "url"
-            ],
-            "additionalProperties": false
-          }
+          "type": "string"
         },
         "$schema": {
           "type": "string"

@@ -163,7 +163,11 @@ const rentals = defineCollection({
 
       mainImage: z.string(),
       
-      aboutImages: z.string(),
+      aboutImages: z.array(
+        z.object({
+          url: image(),
+        })
+      )
     }),
 });
 
