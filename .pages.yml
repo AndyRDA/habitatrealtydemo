@@ -99,7 +99,8 @@ content:
         type: uuid 
       - name: price
         label: Price (ZAR)
-        type: number # Using the Number field type [7]
+        type: string
+        # type: number # Using the Number field type [7]
       - name: pubDate
         label: Listing Date
         type: date # Using the Date field type [6]
@@ -117,22 +118,28 @@ content:
         #   value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
       - name: bedrooms
         label: Bedrooms
-        type: number
+        # type: number
+        type: string
       - name: bathrooms
         label: Bathrooms
-        type: number
+        # type: number
+        type: string
       - name: garages
         label: Garages
-        type: number
+        # type: number
+        type: string
       - name: parking
         label: Parking Bays
-        type: number
+        # type: number
+        type: string
       - name: erfSize
         label: Erf Size (m²)
-        type: number
+        # type: number
+        type: string
       - name: floorSize
         label: Floor Size (m²)
-        type: number
+        # type: number
+        type: string
       - name: isStandalone
         label: Standalone Building?
         type: boolean # Provides a simple True/False toggle or checkbox [7]
@@ -201,7 +208,8 @@ content:
         type: uuid 
       - name: price
         label: Monthly Rent (R)
-        type: number 
+        # type: number
+        type: string 
       - name: address
         label: Address
         type: string
@@ -243,22 +251,28 @@ content:
         #   value: [House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land]
       - name: bedrooms
         label: Bedrooms
-        type: number 
+        # type: number
+        type: string 
       - name: bathrooms
         label: Bathrooms
-        type: number 
+        # type: number
+        type: string 
       - name: garages
         label: Garages
-        type: number 
+        # type: number
+        type: string 
       - name: parking
         label: Parking Bays
-        type: number 
+        # type: number
+        type: string 
       - name: erfSize
         label: Erf Size (m²)
-        type: number 
+        # type: number
+        type: string 
       - name: floorSize
         label: Floor Size (m²)
-        type: number
+        # type: number
+        type: string
       - name: petsAllowed
         label: Pet Friendly?
         type: boolean 

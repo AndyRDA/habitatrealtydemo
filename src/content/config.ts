@@ -43,7 +43,8 @@ const sale = defineCollection({
       city: z.string(),
       isAddressShown: z.boolean(), // Boolean from YAML
       listingNumber: z.string().uuid(), // String/UUID from YAML
-      price: z.number(), // Number from YAML (was z.string() in old config)
+      // price: z.number(),
+      price: z.string(),
       agent: z.string(),
       // Zod utility to convert date string (saved by CMS) into a Date object
       pubDate: z.coerce.date(), 
@@ -51,12 +52,18 @@ const sale = defineCollection({
       // --- Property Metrics and Characteristics (Mirroring YAML Number/Select fields) ---
       // propertyType: z.enum(['House', 'Town House', 'Apartment / Flat', 'Commercial', 'Industrial', 'Farm', 'Land']), // Select field resolves to Zod Enum
       propertyType: z.string(),
-      bedrooms: z.number(),
-      bathrooms: z.number(),
-      garages: z.number(),
-      parking: z.number(),
-      erfSize: z.number(),
-      floorSize: z.number(),
+      // bedrooms: z.number(),
+      bedrooms: z.string(),
+      // bathrooms: z.number(),
+      bathrooms: z.string(),
+      // garages: z.number(),
+      garages: z.string(),
+      // parking: z.number(),
+      parking: z.string(),
+      // erfSize: z.number(),
+      erfSize: z.string(),
+      // floorSize: z.number(),
+      floorSize: z.string(),
       isStandalone: z.boolean(), // Boolean from YAML
 
       // --- Property Features (Mirroring YAML Boolean fields) ---
@@ -95,7 +102,8 @@ const rentals = defineCollection({
       // Core Listing Information
       projectName: z.string(),
       listingNumber: z.string().uuid(),
-      price: z.number(),
+      // price: z.number(),
+      price: z.string(),
       address: z.string(),
       location: z.string(),
       city: z.string(),
@@ -112,12 +120,18 @@ const rentals = defineCollection({
       // Property Metrics and Status
       // propertyType: z.enum(['House', 'Town House', 'Apartment / Flat', 'Commercial', 'Industrial', 'Farm', 'Land']),
       propertyType: z.string(),
-      bedrooms: z.number(),
-      bathrooms: z.number(),
-      garages: z.number(),
-      parking: z.number(),
-      erfSize: z.number(),
-      floorSize: z.number(),
+      // bedrooms: z.number(),
+      bedrooms: z.string(),
+      // bathrooms: z.number(),
+      bathrooms: z.string(),
+      // garages: z.number(),
+      garages: z.string(),
+      // parking: z.number(),
+      parking: z.string(),
+      // erfSize: z.number(),
+      erfSize: z.string(),
+      // floorSize: z.number(),
+      floorSize: z.string(),
       petsAllowed: z.boolean(),
       // furnishedStatus: z.enum(['Furnished', 'Unfurnished']),
       furnishedStatus: z.string(),
