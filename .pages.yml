@@ -324,9 +324,9 @@ content:
 
       - name: aboutImages
         label: About Images
-        type: list
+        type: image
         multiple: true
-        
+
 
 
   # ---------------------
