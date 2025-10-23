@@ -49,8 +49,8 @@ const sale = defineCollection({
       pubDate: z.coerce.date(), 
 
       // --- Property Metrics and Characteristics (Mirroring YAML Number/Select fields) ---
-      propertyType: z.enum(['House', 'Town House', 'Apartment / Flat', 'Commercial', 'Industrial', 'Farm', 'Land']), // Select field resolves to Zod Enum
-      // propertyType: z.string(),
+      // propertyType: z.enum(['House', 'Town House', 'Apartment / Flat', 'Commercial', 'Industrial', 'Farm', 'Land']), // Select field resolves to Zod Enum
+      propertyType: z.string(),
       bedrooms: z.number(),
       bathrooms: z.number(),
       garages: z.number(),
@@ -105,13 +105,13 @@ const rentals = defineCollection({
 
       // Rental-Specific Terms
       occupationDate: z.coerce.date(),
-      leasePeriod: z.enum(['1 Month', '6 Months', '12 Months', '24 Months']),
-      // leasePeriod: z.string(),
+      // leasePeriod: z.enum(['1 Month', '6 Months', '12 Months', '24 Months']),
+      leasePeriod: z.string(),
       depositRequirements: z.string(),
 
       // Property Metrics and Status
-      propertyType: z.enum(['House', 'Town House', 'Apartment / Flat', 'Commercial', 'Industrial', 'Farm', 'Land']),
-      // propertyType: z.string(),
+      // propertyType: z.enum(['House', 'Town House', 'Apartment / Flat', 'Commercial', 'Industrial', 'Farm', 'Land']),
+      propertyType: z.string(),
       bedrooms: z.number(),
       bathrooms: z.number(),
       garages: z.number(),
@@ -119,8 +119,8 @@ const rentals = defineCollection({
       erfSize: z.number(),
       floorSize: z.number(),
       petsAllowed: z.boolean(),
-      furnishedStatus: z.enum(['Furnished', 'Unfurnished']),
-      // furnishedStatus: z.string(),
+      // furnishedStatus: z.enum(['Furnished', 'Unfurnished']),
+      furnishedStatus: z.string(),
 
       // Property Features
       hasPool: z.boolean(),
