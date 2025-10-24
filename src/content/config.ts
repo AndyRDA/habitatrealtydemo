@@ -59,35 +59,35 @@ const sale = defineCollection({
 				"Industrial",
 				"Farm",
 				"Land",
-			]), // Select field resolves to Zod Enum
+			]).optional(), // Select field resolves to Zod Enum
 			// propertyType: z.string(),
-			bedrooms: z.number(),
+			bedrooms: z.number().optional(),
 			// bedrooms: z.string(),
-			bathrooms: z.number(),
+			bathrooms: z.number().optional(),
 			// bathrooms: z.string(),
-			garages: z.number(),
+			garages: z.number().optional(),
 			// garages: z.string(),
-			parking: z.number(),
+			parking: z.number().optional(),
 			// parking: z.string(),
-			erfSize: z.number(),
+			erfSize: z.number().optional(),
 			// erfSize: z.string(),
 			floorSize: z.number().optional(),
 			// floorSize: z.string(),
-			isStandalone: z.boolean(),
+			isStandalone: z.boolean().optional(),
 			// isStandalone: z.string(),
 
 			// --- Property Features (Mirroring YAML Boolean fields) ---
-			hasPool: z.boolean(),
+			hasPool: z.boolean().optional(),
 			// hasPool: z.string(),
-			hasGarden: z.boolean(),
+			hasGarden: z.boolean().optional(),
 			// hasGarden: z.string(),
-			hasFibre: z.boolean(),
+			hasFibre: z.boolean().optional(),
 			// hasFibre: z.string(),
-			hasSolar: z.boolean(),
+			hasSolar: z.boolean().optional(),
 			// hasSolar: z.string(),
-			hasBackupPower: z.boolean(),
+			hasBackupPower: z.boolean().optional(),
 			// hasBackupPower: z.string(),
-			hasADU: z.boolean(),
+			hasADU: z.boolean().optional(),
 			// hasADU: z.string(),
 
 			// --- Description and Media ---
@@ -95,13 +95,13 @@ const sale = defineCollection({
 			// Assuming 'body' holds additional frontmatter text/metadata if you are not using the main content body.
 			// If the rich-text content is intended to be the main Markdown body, you can omit 'body' from the schema.
 			// body: z.string().optional(),
-			descTitle: z.string(),
+			descTitle: z.string().optional(),
 
 			// Image fields, matching the URL/Alt structure
 			mainImage: image(),
 
 			// List field structure (for repeatable images)
-			aboutImages: z.array(image()),
+			aboutImages: z.array(image()).optional(),
 		}),
 });
 
@@ -122,11 +122,11 @@ const rentals = defineCollection({
 			agent: z.string(),
 
 			// Rental-Specific Terms
-			occupationDate: z.coerce.date(),
-			leasePeriod: z.enum(["1 Month", "6 Months", "12 Months", "24 Months"]),
+			occupationDate: z.coerce.date().optional(),
+			leasePeriod: z.enum(["1 Month", "6 Months", "12 Months", "24 Months"]).optional(),
 			// leasePeriod: z.string(),
-			depositRequirements: z.string(),
-
+			depositRequirements: z.string().optional(),
+			levies: z.number().optional(),
 			// Property Metrics and Status
 			propertyType: z.enum([
 				"House",
@@ -136,44 +136,44 @@ const rentals = defineCollection({
 				"Industrial",
 				"Farm",
 				"Land",
-			]),
+			]).optional(),
 			// propertyType: z.string(),
-			bedrooms: z.number(),
+			bedrooms: z.number().optional(),
 			// bedrooms: z.string(),
-			bathrooms: z.number(),
+			bathrooms: z.number().optional(),
 			// bathrooms: z.string(),
-			garages: z.number(),
+			garages: z.number().optional(),
 			// garages: z.string(),
-			parking: z.number(),
+			parking: z.number().optional(),
 			// parking: z.string(),
-			erfSize: z.number(),
+			erfSize: z.number().optional(),
 			// erfSize: z.string(),
 			floorSize: z.number().optional(),
 			// floorSize: z.string(),
-			petsAllowed: z.boolean(),
+			petsAllowed: z.boolean().optional(),
 			// petsAllowed: z.string(),
-			furnishedStatus: z.enum(["Furnished", "Unfurnished"]),
+			furnishedStatus: z.enum(["Furnished", "Unfurnished"]).optional(),
 			// furnishedStatus: z.string(),
 
 			// Property Features
-			hasPool: z.boolean(),
+			hasPool: z.boolean().optional(),
 			// hasPool: z.string(),
-			hasGarden: z.boolean(),
+			hasGarden: z.boolean().optional(),
 			// hasGarden: z.string(),
-			hasFibre: z.boolean(),
+			hasFibre: z.boolean().optional(),
 			// hasFibre: z.string(),
-			hasSolar: z.boolean(),
+			hasSolar: z.boolean().optional(),
 			// hasSolar: z.string(),
-			hasBackupPower: z.boolean(),
+			hasBackupPower: z.boolean().optional(),
 			// hasBackupPower: z.string(),
 
 			// Description and Media
 			// body: z.string().optional(),
-			descTitle: z.string(),
+			descTitle: z.string().optional(),
 			// descBody: z.string(),
 			mainImage: image(),
 
-			aboutImages: z.array(image()),
+			aboutImages: z.array(image()).optional(),
 		}),
 });
 

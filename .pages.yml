@@ -141,6 +141,9 @@ content:
         label: Floor Size (m²)
         type: number
         # type: string
+      - name: levies
+        label: Levies
+        type: number
       - name: isStandalone
         label: Standalone Building?
         type: boolean

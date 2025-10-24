@@ -73,6 +73,9 @@
         "depositRequirements": {
           "type": "string"
         },
+        "levies": {
+          "type": "number"
+        },
         "propertyType": {
           "type": "string",
           "enum": [
@@ -154,25 +157,7 @@
         "isAddressShown",
         "pubDate",
         "agent",
-        "occupationDate",
-        "leasePeriod",
-        "depositRequirements",
-        "propertyType",
-        "bedrooms",
-        "bathrooms",
-        "garages",
-        "parking",
-        "erfSize",
-        "petsAllowed",
-        "furnishedStatus",
-        "hasPool",
-        "hasGarden",
-        "hasFibre",
-        "hasSolar",
-        "hasBackupPower",
-        "descTitle",
-        "mainImage",
-        "aboutImages"
+        "mainImage"
       ],
       "additionalProperties": false
     }

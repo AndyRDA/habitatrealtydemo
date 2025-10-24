@@ -126,22 +126,7 @@
         "price",
         "agent",
         "pubDate",
-        "propertyType",
-        "bedrooms",
-        "bathrooms",
-        "garages",
-        "parking",
-        "erfSize",
-        "isStandalone",
-        "hasPool",
-        "hasGarden",
-        "hasFibre",
-        "hasSolar",
-        "hasBackupPower",
-        "hasADU",
-        "descTitle",
-        "mainImage",
-        "aboutImages"
+        "mainImage"
       ],
       "additionalProperties": false
     }
