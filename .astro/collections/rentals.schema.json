@@ -128,7 +128,7 @@
         "hasBackupPower": {
           "type": "boolean"
         },
-        "body": {
+        "descTitle": {
           "type": "string"
         },
         "mainImage": {
@@ -170,6 +170,7 @@
         "hasFibre",
         "hasSolar",
         "hasBackupPower",
+        "descTitle",
         "mainImage",
         "aboutImages"
       ],

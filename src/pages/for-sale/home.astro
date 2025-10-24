@@ -10,7 +10,9 @@ import ForSaleSearch from "@/components/properties/ForSaleSearch.astro";
 // import Sell from "@/components/ctas/Sell.astro";
 // Content
 import { getCollection } from "astro:content";
-const forSale = await getCollection("sale");
+const forSale = (await getCollection('sale')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <BaseLayout>

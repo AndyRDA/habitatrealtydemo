@@ -9,7 +9,7 @@ import Wrapper from "@/components/foundations/containers/Wrapper.astro";
 import { formatDate, formatNumber } from "@/components/foundations/scripts/HelperFunctions.js";
 // Content
 const { frontmatter } = Astro.props;
-
+// const { Content } = Astro.props;
 // function formatDate(dateString) {
 //   const date = new Date(dateString);
 //   return date.toLocaleDateString('en-ZA', { month: 'long', year: 'numeric' });
@@ -27,7 +27,7 @@ let propertyDetails = [
   { key: 'Type of Property', value: frontmatter.propertyType },
   { key: 'Listing Date', value: formatDate(frontmatter.pubDate) }, 
   { key: 'Erf Size (m²)', value: frontmatter.erfSize ? `${frontmatter.erfSize} m²` : 'Not Given' },
-  { key: 'Floor Area (m²)', value: frontmatter.floorSize ? `${frontmatter.floorSize} m²` : 'Not Given' },
+  frontmatter.floorSize && { key: 'Floor Area (m²)', value: frontmatter.floorSize},
   { key: 'Bedrooms', value: frontmatter.bedrooms },
   { key: 'Bathrooms', value: frontmatter.bathrooms },
   { key: 'Garages', value: frontmatter.garages },
@@ -47,12 +47,11 @@ let propertyDetails = [
   { key: 'Solar Geyser/Power', value: frontmatter.hasSolar ? 'Yes' : 'No' },
   { key: 'Backup Power', value: frontmatter.hasBackupPower ? 'Yes' : 'No' },
   { key: 'Additional Accommodation', value: frontmatter.hasADU ? 'Yes' : 'No' },
-];
+].filter(Boolean);
 
 if(frontmatter.propertyType === 'Land') {
   propertyDetails = [
     { key: 'Listing Date', value: frontmatter.pubDate }, 
-    { key: 'Show Address', value: frontmatter.isAddressShown ? 'Yes' : 'No' },
     { key: 'Price (ZAR)', value: `R ${formatNumber(frontmatter.price)}` },
     { key: 'Type of Property', value: frontmatter.propertyType },
     { key: 'Erf Size (m²)', value: frontmatter.erfSize },
@@ -146,14 +145,16 @@ if(frontmatter.propertyType === 'Land') {
                       data-aos-duration="1000"
                       class="text-3xl font-medium text-base-900 "
                     >
-                      Description
+                      {frontmatter.descTitle}
                     </dd>
                     <dd
                       data-aos="fade-up"
                       data-aos-duration="1500"
-                      class="mt-6 text-pretty text-base-500 2xl:text-lg"
+                      class="mt-6 text-pretty text-base-500 2xl:text-lg space-y-4 max-w-prose"
                     >
-                      {frontmatter.body}
+                      <!-- <Content /> -->
+                       <!-- {frontmatter.descBody} -->
+                        <slot />
                     </dd>
                   </div>
               

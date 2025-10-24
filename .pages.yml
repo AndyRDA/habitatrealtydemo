@@ -173,22 +173,22 @@ content:
         # type: string
 
       # Description and Media
+      - name: descTitle
+        label: Description Heading
+        type: string
       - name: body
         label: Full Description (Stylish 3-Bedroom Home...)
         type: rich-text # Provides a visual WYSIWYG editor for formatted text
+        
       - name: mainImage
         label: Main Listing Photo
-        type: image
-        fields:
-          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
-          - { name: alt, label: Alt text, type: string }
+        type: image 
+
       - name: aboutImages
         label: About Images
-        type: list
-        fields:
-          - { name: url, label: Image, type: image, options: { media: images, path: highlights } } # e.g. highlights folder
-          - { name: alt, label: Alt text, type: string }
-
+        type: image
+        options:
+          multiple: true
   
 
   #----------------------
@@ -315,9 +315,15 @@ content:
         # type: string 
 
       # Description and Media
+      - name: descTitle
+        label: Description Heading
+        type: string
       - name: body
         label: Full Property Description
         type: rich-text 
+      # - name: descBody
+      #   label: Description
+      #   type: text
       - name: mainImage
         label: Main Listing Photo
         type: image 

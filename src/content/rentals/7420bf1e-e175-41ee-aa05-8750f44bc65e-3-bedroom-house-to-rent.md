@@ -6,7 +6,7 @@ price: 65000
 address: 117 Southern Right Crescent
 location: Klein Slangkop, Kommetjie
 city: Cape Town
-isAddressShown: false
+isAddressShown: true
 pubDate: 2025-10-01
 agent: Lynnie Bienz
 occupationDate: 2025-10-01
@@ -56,19 +56,24 @@ aboutImages:
   - src/images/rentals/slangkop/Ensure1280x720 (16).jpg
   - src/images/rentals/slangkop/Ensure1280x720 (17).jpg
   - src/images/rentals/slangkop/Ensure1280x720 (18).jpg
+descTitle: Private Luxury Villa in Klein Slangkop Estate 
 ---
-## Private Luxury Villa in Klein Slangkop Estate
-
 Positioned within the exclusive Klein Slangkop Estate, this north-facing villa offers a sophisticated and private lifestyle in one of the most sought-after locations along the Cape Peninsula.
+
 
 The ground floor features spacious open-plan living areas, where the kitchen, dining, and lounge seamlessly flow together—flooded with natural light and designed for easy, elegant indoor outdoor living. A separate lounge provides a more intimate space, perfect as a TV room, reading nook, or home office.
 
+
 The downstairs bedroom overlooks the lush garden and sparkling pool and comes complete with its own dressing room and en-suite bathroom, ideal as a private guest suite or second master.
+
 
 Upstairs, the master suite is a serene sanctuary with spectacular views of Chapman's Peak and Noordhoek Beach. Light, sunny, and generously proportioned, it also includes a dressing room and a luxurious en-suite bathroom.
 
+
 Adding further versatility, a separate self-contained bachelor unit offers the perfect space for a home office, older children, or visiting guests. This is the third bedroom in the home.
 
+
 Additional features include a scullery, a double automated garage, garden irrigation, inverter and alarm system.
+
 
 Enjoy secure, tranquil coastal living in a home designed for both comfort and style.

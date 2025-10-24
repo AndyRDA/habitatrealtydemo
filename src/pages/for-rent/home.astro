@@ -10,7 +10,9 @@ import ForRentSearch from "@/components/properties/ForRentSearch.astro";
 import Sell from "@/components/ctas/Sell.astro";
 // Content
 import { getCollection } from "astro:content";
-const forRent = await getCollection("rentals");
+const forRent = (await getCollection('rentals')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <BaseLayout>
