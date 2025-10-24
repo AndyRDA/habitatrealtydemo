@@ -142,7 +142,7 @@ const posts = await Promise.all(
       searchResults.innerHTML = results
         .map(
           (result) => `
-            <a href="/for-sale/${result.item.slug}" class="block p-8  duration-300 hover:bg-base-100 gap-2">
+            <a href="/for-rent/${result.item.slug}" class="block p-8  duration-300 hover:bg-base-100 gap-2">
               <h3  class="font-medium text-base  text-base-900  block">
                 ${result.item.projectName}
               </h3>
