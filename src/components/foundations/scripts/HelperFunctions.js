@@ -1,6 +1,6 @@
 export function formatDate(dateString) {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-ZA', { month: 'long', year: 'numeric' });
+  return date.toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 export function formatNumber(value) {
   if (value == null || value === '') return 'N/A';

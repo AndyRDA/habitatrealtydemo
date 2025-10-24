@@ -26,8 +26,9 @@ let propertyDetails = [
   { key: 'Price (ZAR)', value: `R ${formatNumber(frontmatter.price)}` },
   { key: 'Type of Property', value: frontmatter.propertyType },
   { key: 'Listing Date', value: formatDate(frontmatter.pubDate) }, 
-  { key: 'Erf Size (m²)', value: frontmatter.erfSize ? `${frontmatter.erfSize} m²` : 'Not Given' },
+  frontmatter.erfSize && { key: 'Erf Size (m²)', value: frontmatter.erfSize + ' m²' },
   frontmatter.floorSize && { key: 'Floor Area (m²)', value: frontmatter.floorSize},
+  frontmatter.levies && { key: 'Levies (ZAR)', value: `R ${formatNumber(frontmatter.levies)}` },
   { key: 'Bedrooms', value: frontmatter.bedrooms },
   { key: 'Bathrooms', value: frontmatter.bathrooms },
   { key: 'Garages', value: frontmatter.garages },
@@ -51,11 +52,13 @@ let propertyDetails = [
 
 if(frontmatter.propertyType === 'Land') {
   propertyDetails = [
-    { key: 'Listing Date', value: frontmatter.pubDate }, 
+    { key: 'Listing Date', value: formatDate(frontmatter.pubDate) }, 
     { key: 'Price (ZAR)', value: `R ${formatNumber(frontmatter.price)}` },
     { key: 'Type of Property', value: frontmatter.propertyType },
-    { key: 'Erf Size (m²)', value: frontmatter.erfSize },
-  ]
+    { key: 'Erf Size (m²)', value: frontmatter.erfSize + ' m²' },
+    frontmatter.levies && { key: 'Levies (ZAR)', value: `R ${formatNumber(frontmatter.levies)}` },
+    { key: 'Zoning', value: frontmatter.zoning },
+  ].filter(Boolean);
 }
 ---
 

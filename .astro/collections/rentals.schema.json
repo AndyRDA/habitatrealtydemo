@@ -76,6 +76,9 @@
         "levies": {
           "type": "number"
         },
+        "zoning": {
+          "type": "string"
+        },
         "propertyType": {
           "type": "string",
           "enum": [

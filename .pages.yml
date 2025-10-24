@@ -117,6 +117,10 @@ content:
         type: select
         options: 
           values: [ House, Town House, Apartment / Flat, Commercial, Industrial, Farm, Land ]
+      - name: zoning
+        label: Zoning
+        type: string
+        description: if applicable
       - name: bedrooms
         label: Bedrooms
         type: number

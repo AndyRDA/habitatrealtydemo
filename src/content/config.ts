@@ -60,6 +60,8 @@ const sale = defineCollection({
 				"Farm",
 				"Land",
 			]).optional(), // Select field resolves to Zod Enum
+			levies: z.number().optional(),
+			zoning: z.string().optional(),
 			// propertyType: z.string(),
 			bedrooms: z.number().optional(),
 			// bedrooms: z.string(),
@@ -127,6 +129,7 @@ const rentals = defineCollection({
 			// leasePeriod: z.string(),
 			depositRequirements: z.string().optional(),
 			levies: z.number().optional(),
+			zoning: z.string().optional(),
 			// Property Metrics and Status
 			propertyType: z.enum([
 				"House",

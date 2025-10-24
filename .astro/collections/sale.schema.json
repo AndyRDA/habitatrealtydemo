@@ -60,6 +60,12 @@
             "Land"
           ]
         },
+        "levies": {
+          "type": "number"
+        },
+        "zoning": {
+          "type": "string"
+        },
         "bedrooms": {
           "type": "number"
         },
