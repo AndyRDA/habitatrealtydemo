@@ -121,6 +121,9 @@ content:
         label: Zoning
         type: string
         description: if applicable
+      - name: levies
+        label: Levies
+        type: number
       - name: bedrooms
         label: Bedrooms
         type: number
@@ -145,9 +148,7 @@ content:
         label: Floor Size (m²)
         type: number
         # type: string
-      - name: levies
-        label: Levies
-        type: number
+  
       - name: isStandalone
         label: Standalone Building?
         type: boolean
@@ -258,6 +259,9 @@ content:
         label: Deposit Requirements
         type: string 
         description: Specify deposit amount (e.g., 1 Month Deposit, R50,000)
+      - name: levies
+        label: Levies
+        type: number
 
       # Property Metrics and Status
       - name: propertyType
