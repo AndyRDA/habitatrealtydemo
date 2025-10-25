@@ -1,5 +1,6 @@
 ---
 projectName: Klein Slangkop
+isLive: true
 title: 3 Bedroom House to Rent
 listingNumber: 7420bf1e-e175-41ee-aa05-8750f44bc65e
 price: 65000

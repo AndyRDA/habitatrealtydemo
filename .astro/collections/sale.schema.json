@@ -7,6 +7,9 @@
         "projectName": {
           "type": "string"
         },
+        "isLive": {
+          "type": "boolean"
+        },
         "title": {
           "type": "string"
         },
@@ -123,6 +126,7 @@
       },
       "required": [
         "projectName",
+        "isLive",
         "title",
         "address",
         "location",

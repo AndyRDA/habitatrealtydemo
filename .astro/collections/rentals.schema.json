@@ -7,6 +7,9 @@
         "projectName": {
           "type": "string"
         },
+        "isLive": {
+          "type": "boolean"
+        },
         "listingNumber": {
           "type": "string",
           "format": "uuid"
@@ -152,6 +155,7 @@
       },
       "required": [
         "projectName",
+        "isLive",
         "listingNumber",
         "price",
         "address",

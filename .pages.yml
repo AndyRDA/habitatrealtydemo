@@ -73,12 +73,15 @@ content:
     type: collection # Specifies this is a list of multiple entries [4]
     filename: '{fields.listingNumber}-{fields.title}.md' # Pattern for saving files (e.g., 116494858-3-bedroom-house.md) [4]
     view:
-      fields: [title, price, listingNumber, pubDate] # Fields visible in the list view [5]
+      fields: [title, price, listingNumber, pubDate, isLive] # Fields visible in the list view [5]
     fields:
       # Core Listing Information
       - name: projectName
         label: Project Name
         type: string
+      - name: isLive
+        label: Publish to site
+        type: boolean
       - name: title
         label: Property Title (e.g., 3 Bedroom House for Sale)
         type: string

@@ -11,8 +11,12 @@ import ForRentEntry from "@/components/properties/ForRentEntry.astro";
 import Hero from "@/components/headers/hero.astro";
 //  Content
 import { getCollection } from "astro:content";
-const forSale = await getCollection("sale");
-const forRent = await getCollection("rentals");
+const forSale = (await getCollection("sale"))
+  .filter(post => post.data.isLive)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const forRent = (await getCollection("rentals"))
+  .filter(post => post.data.isLive)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout>

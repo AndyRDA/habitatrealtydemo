@@ -37,6 +37,7 @@ const sale = defineCollection({
 		z.object({
 			// --- Core Listing Information ---
 			projectName: z.string(),
+			isLive: z.boolean(),
 			title: z.string(),
 			address: z.string(),
 			location: z.string(),
@@ -112,6 +113,7 @@ const rentals = defineCollection({
 		z.object({
 			// Core Listing Information
 			projectName: z.string(),
+			isLive: z.boolean(),
 			listingNumber: z.string().uuid(),
 			price: z.number(),
 			// price: z.string(),
