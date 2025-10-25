@@ -1,6 +1,6 @@
 ---
 projectName: Lake Michelle
-isLive: false
+isLive: true
 title: 3 Bedroom House for Sale
 location: Noordhoek
 address: 30 Northshore Drive
