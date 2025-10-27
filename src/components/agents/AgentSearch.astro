@@ -1,13 +1,15 @@
 ---
 import { getCollection } from "astro:content";
 const posts = await Promise.all(
-  (await getCollection("agents")).map(async (post) => ({
-    name: post.data.name,
-    office: post.data.office,
-    role: post.data.role,
-    avatar: post.data.avatar,
-    slug: post.slug,
-  }))
+  (await getCollection("agents")).map(async (post) => {
+    return {
+      name: post.data.name,
+      office: post.data.office,
+      role: post.data.role,
+      avatar: post.data.avatar.src, 
+      slug: post.slug,
+    };
+  })
 );
 ---
 
