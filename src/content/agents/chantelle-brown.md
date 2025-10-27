@@ -14,8 +14,8 @@ languages:
 propertiesSold: 28
 marketTime: 29 Days
 areaServed:
-  - Cape Town
   - Noordhoek
+  - Cape Town
 office: "Habitat Realty "
 officeAddress: 298 Main Road, Kenilworth, Cape Town, Western Cape
 avatar:
