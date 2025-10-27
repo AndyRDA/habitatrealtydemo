@@ -154,11 +154,11 @@ const { frontmatter } = Astro.props;
             </ul>
           </div>
         </div>
-        <div class="lg:col-span-1 order-first mt-30">
+        <div class="lg:col-span-1 order-first">
           <Image
             width={800}
             height={1000}
-            class=" aspect-square  object-cover object-top"
+            class=" h-full w-full object-contain object-center rounded-sm"
             src={frontmatter.avatarLg}
             alt={frontmatter.name}
           />
@@ -293,7 +293,7 @@ const { frontmatter } = Astro.props;
             Get in touch
           </Text>
           <Image
-            class="aspect-square object-cover object-top mt-8"
+            class=" object-contain object-center rounded-sm mt-8"
             src={frontmatter.avatar}
             alt={frontmatter.name}
           />
