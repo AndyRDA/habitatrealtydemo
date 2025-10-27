@@ -12,13 +12,10 @@ const agents = defineCollection({
 			propertiesSold: z.number(),
 			marketTime: z.string(),
 			areaServed: z.string().array(),
-			gallery: z.array(image()).optional(),
 			office: z.string(),
 			officeAddress: z.string(),
-			avatar: z.object({
-				url: image(), // ✅ image()
-				alt: z.string(),
-			}),
+			avatar: image(),
+			gallery: z.array(image()).optional(),
 		}),
 });
 

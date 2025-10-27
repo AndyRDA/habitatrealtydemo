@@ -18,9 +18,7 @@ areaServed:
   - Cape Town
 office: "Habitat Realty "
 officeAddress: 298 Main Road, Kenilworth, Cape Town, Western Cape
-avatar:
-  url: src/images/agents/large/BronwynHenning.png
-  alt: Bronwyn Henning
+avatar: src/images/agents/large/BronwynHenning.png
 ---
 Morbi tempor felis cursus, imperdiet neque ac, malesuada nisl. Duis bibendum auctor ex a porta. Praesent lacinia orci eu efficitur pretium. Fusce egestas hendrerit sagittis. Integer tincidunt vel libero tempus sollicitudin. Pellentesque et aliquet diam, at commodo dolor. In dictum leo mauris, vitae semper mauris iaculis eu.
 

@@ -37,12 +37,6 @@
             "type": "string"
           }
         },
-        "gallery": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "office": {
           "type": "string"
         },
@@ -50,20 +44,13 @@
           "type": "string"
         },
         "avatar": {
-          "type": "object",
-          "properties": {
-            "url": {
-              "type": "string"
-            },
-            "alt": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "url",
-            "alt"
-          ],
-          "additionalProperties": false
+          "type": "string"
+        },
+        "gallery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "$schema": {
           "type": "string"

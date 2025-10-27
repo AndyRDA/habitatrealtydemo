@@ -11,7 +11,7 @@ const { name, role, officeAddress, office, phone, email, avatar, url } = {
 	office: Astro.props.post.data.office,
 	phone: Astro.props.post.data.phone,
 	email: Astro.props.post.data.email,
-	avatar: Astro.props.post.data.avatar.url,
+	avatar: Astro.props.post.data.avatar,
 	officeAddress: Astro.props.post.data.officeAddress,
 };
 ---
@@ -36,7 +36,7 @@ const { name, role, officeAddress, office, phone, email, avatar, url } = {
 		<div class="absolute inset-0"></div>
 	</div>
 	<div class="flex flex-col w-full">
-		<Text tag="h3" variant="textLG" class="font-mediumtext-base-900">
+		<Text tag="h3" variant="textLG" class="font-medium text-base-900">
 			{name}
 			<span class="mt-2 text-base-500 text-sm ml-2">
 				{role}
