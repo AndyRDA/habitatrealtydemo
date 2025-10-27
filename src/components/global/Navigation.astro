@@ -61,11 +61,11 @@ const navigation = [
 <section x-data="{ expanded: false }">
 	<Wrapper class="pt-6">
 		<div class="relative">
-			<div class="flex items-center justify-between w-full">
+			<div class="grid grid-cols-2 lg:grid-cols-3 items-center justify-between w-full">
 				<a
 					href="/"
 					aria-label="Go to homepage"
-					class="flex items-center justify-center gap-1"
+					class="flex items-center gap-1 "
 				>
 					<span class="sr-only">Go to homepage</span>
 					<Logo class="size-8 text-base-900" />
@@ -77,13 +77,16 @@ const navigation = [
 				</a>
 
 				<div
-					class="hidden lg:flex gap-2 lg:gap-4 text-base-900 uppercase text-xs font-medium lg:text-sm"
+					class="hidden justify-center lg:flex gap-2 lg:gap-4 text-base-900 uppercase text-xs font-medium lg:text-sm"
 				>
 					<a class="hover:text-base-500 " href="/for-sale/home">
-						Find Your new Home
+						Properties for Sale
+					</a>
+					<a class="hover:text-base-500 " href="/for-rent/home">
+						properties for Rent
 					</a>
 				</div>
-				<div class="order-last">
+				<div class="order-last ml-auto">
 					<button
 						id="menubutton"
 						type="button"

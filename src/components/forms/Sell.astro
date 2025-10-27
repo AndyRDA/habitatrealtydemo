@@ -209,7 +209,7 @@ const highlights = [
         <Text
           tag="p"
           variant="textX"
-          class="mt-40 pt-8 border-t text-base-500 text-xs 2xl:text-sm space-y-4 border-base-200"
+          class="mt-10 pt-8 border-t text-base-500 text-xs 2xl:text-sm space-y-4 border-base-200"
         >
           By clicking SEND MESSAGE, I agree that Habitat Realty may use and/or share my information with a Habitat Realty agent to contact me about my real estate needs. Agents may contact
           me by phone, text message, WhatsApp or email, including by automated means, about real estate
@@ -238,7 +238,7 @@ const highlights = [
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <Text tag="h3" variant="displaySM" class="font-meidum text-base-900">
+        <Text tag="h3" variant="displaySM" class="font-medium text-base-900">
           Exceptional properties deserve extraordinary marketing.
         </Text>
         <Text tag="p" variant="textBase" class="mt-6 text-pretty text-base-500">
@@ -318,17 +318,17 @@ const highlights = [
 
 <section>
   <Wrapper variant="standard" class="py-12">
-    <div class="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:items-center">
-      <Image
-        width={800}
-        height={1000}
-        src={SellImage}
-        alt="#_"
-        class="max-h-80 md:max-h-full w-full object-cover"
-      />
-      <div
-        class="p-8 lg:p-20 h-full flex flex-col items-center justify-center outline outline-base-200"
-      >
+  <div class="relative flex flex-col md:flex-row gap-4 md:items-stretch">
+      <div class="relative flex-1 w-full h-64 md:h-auto">
+        <Image
+          width={800}
+          height={1000}
+          src={SellImage}
+          alt="#_"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="flex-1 p-8 lg:p-20 h-full flex flex-col items-center justify-center outline outline-base-200">
         <div>
           <Text
             tag="h3"
@@ -414,7 +414,7 @@ const highlights = [
     </div>
   </Wrapper>
 </section>
-<section>
+<!-- <section>
   <Wrapper class="pb-12">
     <div
       class="grid grid-cols-1 lg:grid-cols-3 gap-24 2xl:gap-8 pt-8 border-t border-base-200"
@@ -546,4 +546,4 @@ const highlights = [
       </div>
     </div>
   </Wrapper>
-</section>
+</section> -->
