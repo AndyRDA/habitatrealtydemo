@@ -55,7 +55,7 @@ content:
         options:
           multiple: true
           creatable: true
-          values: [ Atlantic Seaboard, Cape Flats, City Bowl, Eastern Suburbs, Northern Suburbs, Southern Suburbs, South Peninsula, West Coast, Winelands]
+          values: [ Cape Town, Atlantic Seaboard, Cape Flats, City Bowl, Eastern Suburbs, Northern Suburbs, Southern Suburbs, South Peninsula, West Coast, Winelands]
       - name: gallery
         label: Image Gallery
         type: image
