@@ -13,53 +13,28 @@
         "intro": {
           "type": "string"
         },
-        "contact": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "item": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "item"
-            ],
-            "additionalProperties": false
-          }
+        "phone": {
+          "type": "number"
+        },
+        "email": {
+          "type": "string"
         },
         "languages": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "item": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "item"
-            ],
-            "additionalProperties": false
+            "type": "string"
           }
         },
-        "stats": {
+        "propertiesSold": {
+          "type": "number"
+        },
+        "marketTime": {
+          "type": "string"
+        },
+        "areasServed": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "key": {
-                "type": "string"
-              },
-              "value": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "key",
-              "value"
-            ],
-            "additionalProperties": false
+            "type": "string"
           }
         },
         "images": {
@@ -111,9 +86,12 @@
         "name",
         "role",
         "intro",
-        "contact",
+        "phone",
+        "email",
         "languages",
-        "stats",
+        "propertiesSold",
+        "marketTime",
+        "areasServed",
         "images",
         "office",
         "officeAddress",

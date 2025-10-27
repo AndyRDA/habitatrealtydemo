@@ -6,9 +6,12 @@ const agents = defineCollection({
 			name: z.string(),
 			role: z.string(),
 			intro: z.string(),
-			contact: z.array(z.object({ item: z.string() })),
-			languages: z.array(z.object({ item: z.string() })),
-			stats: z.array(z.object({ key: z.string(), value: z.string() })),
+			phone: z.number(),
+			email: z.string(),
+			languages: z.string().array(),
+			propertiesSold: z.number(),
+			marketTime: z.string(),
+			areasServed: z.string().array(),
 			images: z.array(
 				z.object({
 					url: image(), // ✅ image()
