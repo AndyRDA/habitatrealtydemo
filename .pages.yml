@@ -56,12 +56,11 @@ content:
           multiple: true
           creatable: true
           values: [ Atlantic Seaboard, Cape Flats, City Bowl, Eastern Suburbs, Northern Suburbs, Southern Suburbs, South Peninsula, West Coast, Winelands]
-      - name: images
-        label: Gallery
-        type: list
-        fields:
-          - { name: url, label: Image, type: image, options: { media: images, path: agents } } # src/images/agents
-          - { name: alt, label: Alt text, type: string }
+      - name: gallery
+        label: Image Gallery
+        type: image
+        options:
+          multiple: true
       - name: office
         label: Office
         type: string

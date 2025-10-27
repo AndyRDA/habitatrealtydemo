@@ -37,23 +37,10 @@
             "type": "string"
           }
         },
-        "images": {
+        "gallery": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "url": {
-                "type": "string"
-              },
-              "alt": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "url",
-              "alt"
-            ],
-            "additionalProperties": false
+            "type": "string"
           }
         },
         "office": {
@@ -92,7 +79,6 @@
         "propertiesSold",
         "marketTime",
         "areasServed",
-        "images",
         "office",
         "officeAddress",
         "avatar"
