@@ -32,7 +32,7 @@ content:
       - { name: intro,  label: Intro, type: text }
       - name: phone
         label: Phone Number
-        type: string
+        type: number
       - name: email
         label: Email
         type: string

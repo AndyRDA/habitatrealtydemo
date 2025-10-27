@@ -8,3 +8,10 @@ export function formatNumber(value) {
   if (Number.isNaN(num)) return String(value);
   return new Intl.NumberFormat('en-ZA').format(num);
 }
+export function formatPhoneNumber(phone) {
+  if (!phone) return '';
+  // Remove any non-digit characters
+  const cleaned = phone.replace(/\D/g, '');
+  // If it starts with 0, replace with +27
+  return cleaned.startsWith('0') ? '+27' + cleaned.substring(1) : cleaned;
+}
