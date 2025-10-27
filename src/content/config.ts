@@ -11,7 +11,7 @@ const agents = defineCollection({
 			languages: z.string().array(),
 			propertiesSold: z.number(),
 			marketTime: z.string(),
-			areasServed: z.string().array(),
+			areaServed: z.string().array(),
 			gallery: z.array(image()).optional(),
 			office: z.string(),
 			officeAddress: z.string(),

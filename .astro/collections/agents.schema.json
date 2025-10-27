@@ -31,7 +31,7 @@
         "marketTime": {
           "type": "string"
         },
-        "areasServed": {
+        "areaServed": {
           "type": "array",
           "items": {
             "type": "string"
@@ -78,7 +78,7 @@
         "languages",
         "propertiesSold",
         "marketTime",
-        "areasServed",
+        "areaServed",
         "office",
         "officeAddress",
         "avatar"
