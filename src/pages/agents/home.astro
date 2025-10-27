@@ -37,6 +37,7 @@ import { getCollection } from "astro:content";
         <div class="lg:col-span-2">
           <AgentSearch />
           <div class="flex flex-col divide-y divide-base-200">
+            list of agents here
             {allAgents.map((post) => <AgentEntries post={post} />)}
           </div>
         </div>
