@@ -42,12 +42,15 @@ const { name, role, officeAddress, office, phone, email, avatar, url } = {
 				{role}
 			</span>
 		</Text>
-		<Text tag="p" variant="textSM" class="text-base-500">
-			{phone}
+		<Text tag="p" variant="textSM" class="text-base-500 flex items-center gap-3">
+			0{phone} 
 		</Text>
 		<Text tag="p" variant="textSM" class="text-base-500">
 			{email}
 		</Text>
+    <!-- <Text tag="a" variant="textSM" class="text-base-500" href={`https://wa.me/+27${phone}`}>
+      Chat on WhatsApp
+    </Text> -->
 		<!-- <Text tag="p" variant="textSM" class="text-base-500">
 			WhatsApp {formatPhoneNumber(phone)}
 		</Text> -->

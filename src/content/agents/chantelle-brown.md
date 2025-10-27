@@ -13,6 +13,7 @@ languages:
   - Afrikaans
 propertiesSold: 28
 marketTime: 29 Days
+maxSale: 22000000
 areaServed:
   - Noordhoek
   - Cape Town

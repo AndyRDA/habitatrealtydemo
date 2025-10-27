@@ -6,14 +6,15 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/foundations/elements/Text.astro";
 import Button from "@/components/foundations/elements/Button.astro";
 import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+import { formatNumber } from "@/components/foundations/scripts/HelperFunctions.js";
 // Content
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout>
   <section>
-    <Wrapper class="pb-12">
-      <div class="grid lg:grid-cols-3 gap-8">
+    <Wrapper class="p-12">
+      <div class="grid lg:grid-cols-2 gap-8">
         <div>
           <Text
             tag="h1"
@@ -68,17 +69,33 @@ const { frontmatter } = Astro.props;
               data-aos-duration="2000"
               class="list-none mt-4 text-base-500 space-y-1"
             >
-              {
-                frontmatter.contact.map((contact) => (
-                  <>
+             
                     <li>
-                      <a class="hover:text-base-900  " href={contact.item}>
-                        {contact.item}
+                      <a class="hover:text-base-900 flex items-center gap-2 ">
+                        <svg class="w-[1em] h-[1em]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3.54 2C3.6 2.89 3.75 3.76 3.99 4.59L2.79 5.79C2.38 4.59 2.12 3.32 2.03 2H3.54ZM13.4 14.02C14.25 14.26 15.12 14.41 16 14.47V15.96C14.68 15.87 13.41 15.61 12.2 15.21L13.4 14.02ZM4.5 0H1C0.45 0 0 0.45 0 1C0 10.39 7.61 18 17 18C17.55 18 18 17.55 18 17V13.51C18 12.96 17.55 12.51 17 12.51C15.76 12.51 14.55 12.31 13.43 11.94C13.331 11.903 13.2256 11.886 13.12 11.89C12.86 11.89 12.61 11.99 12.41 12.18L10.21 14.38C7.37547 12.9303 5.06967 10.6245 3.62 7.79L5.82 5.59C6.1 5.31 6.18 4.92 6.07 4.57C5.69132 3.41789 5.4989 2.21274 5.5 1C5.5 0.45 5.05 0 4.5 0Z" fill="currentColor"/>
+                        </svg>
+                        0{frontmatter.phone}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="hover:text-base-900 flex items-center gap-2" href=`https://wa.me/+27${frontmatter.phone}`>
+                        <svg class="w-[1em] h-[1em]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 2.91005C16.0831 1.98416 14.991 1.25002 13.7875 0.750416C12.584 0.250812 11.2931 -0.00426317 9.99 5.38951e-05C4.53 5.38951e-05 0.0800002 4.45005 0.0800002 9.91005C0.0800002 11.6601 0.54 13.3601 1.4 14.8601L0 20.0001L5.25 18.6201C6.7 19.4101 8.33 19.8301 9.99 19.8301C15.45 19.8301 19.9 15.3801 19.9 9.92005C19.9 7.27005 18.87 4.78005 17 2.91005ZM9.99 18.1501C8.51 18.1501 7.06 17.7501 5.79 17.0001L5.49 16.8201L2.37 17.6401L3.2 14.6001L3 14.2901C2.17755 12.9771 1.74092 11.4593 1.74 9.91005C1.74 5.37005 5.44 1.67005 9.98 1.67005C12.18 1.67005 14.25 2.53005 15.8 4.09005C16.5676 4.85392 17.1759 5.7626 17.5896 6.76338C18.0033 7.76417 18.2142 8.83714 18.21 9.92005C18.23 14.4601 14.53 18.1501 9.99 18.1501ZM14.51 11.9901C14.26 11.8701 13.04 11.2701 12.82 11.1801C12.59 11.1001 12.43 11.0601 12.26 11.3001C12.09 11.5501 11.62 12.1101 11.48 12.2701C11.34 12.4401 11.19 12.4601 10.94 12.3301C10.69 12.2101 9.89 11.9401 8.95 11.1001C8.21 10.4401 7.72 9.63005 7.57 9.38005C7.43 9.13005 7.55 9.00005 7.68 8.87005C7.79 8.76005 7.93 8.58005 8.05 8.44005C8.17 8.30005 8.22 8.19005 8.3 8.03005C8.38 7.86005 8.34 7.72005 8.28 7.60005C8.22 7.48005 7.72 6.26005 7.52 5.76005C7.32 5.28005 7.11 5.34005 6.96 5.33005H6.48C6.31 5.33005 6.05 5.39005 5.82 5.64005C5.6 5.89005 4.96 6.49005 4.96 7.71005C4.96 8.93005 5.85 10.1101 5.97 10.2701C6.09 10.4401 7.72 12.9401 10.2 14.0101C10.79 14.2701 11.25 14.4201 11.61 14.5301C12.2 14.7201 12.74 14.6901 13.17 14.6301C13.65 14.5601 14.64 14.0301 14.84 13.4501C15.05 12.8701 15.05 12.3801 14.98 12.2701C14.91 12.1601 14.76 12.1101 14.51 11.9901Z" fill="currentColor"/>
+                        </svg>
+                        WhatsApp {frontmatter.name.split(' ')[0]}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="hover:text-base-900 flex items-center gap-2 " href=`mailto:${frontmatter.email}`>
+                        <svg class="w-[1em] h-[1em]" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 2C20 0.9 19.1 0 18 0H2C0.9 0 0 0.9 0 2V14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2ZM18 2L10 7L2 2H18ZM18 14H2V4L10 9L18 4V14Z" fill="currentColor"/>
+                        </svg>
+                        {frontmatter.email}
                       </a>
                     </li>
                   </>
-                ))
-              }
+              
             </ul>
           </div>
           <div class="mt-8 pt-8 border-t border-base-200 text-xs 2xl:text-sm">
@@ -124,11 +141,11 @@ const { frontmatter } = Astro.props;
               class="list-none mt-4 text-base-500 space-y-1 flex gap-2 flex-wrap"
             >
               {
-                frontmatter.languages.map((languages) => (
+                frontmatter.languages.map((language) => (
                   <>
                     <li>
                       <Text tag="h3" variant="textBase">
-                        {languages.item}
+                        {language}
                       </Text>
                     </li>
                   </>
@@ -137,21 +154,19 @@ const { frontmatter } = Astro.props;
             </ul>
           </div>
         </div>
-        <div class="lg:col-span-2 order-first">
+        <div class="lg:col-span-1 order-first mt-30">
           <Image
             width={800}
             height={1000}
-            class="w-full aspect-square h-full object-cover object-top"
-            src={frontmatter.avatar.url}
-            alt={frontmatter.avatar.alt}
+            class=" aspect-square  object-cover object-top"
+            src={frontmatter.avatarLg}
+            alt={frontmatter.name}
           />
         </div>
       </div>
       <div class="grid lg:grid-cols-3 pt-8 mt-40 border-t border-base-200">
         <dl class="flex flex-col gap-y-8">
-          {
-            frontmatter.stats.map((stats) => (
-              <>
+          
                 <div class="flex flex-col-reverse gap-y-3 ">
                   <dt
                     data-aos="fade-up"
@@ -159,7 +174,7 @@ const { frontmatter } = Astro.props;
                     class="text-base-500"
                   >
                     <Text tag="h3" variant="textBase">
-                      {stats.value}
+                      Properties Sold
                     </Text>
                   </dt>
                   <dd
@@ -168,20 +183,60 @@ const { frontmatter } = Astro.props;
                     class=" text-base-900 "
                   >
                     <Text tag="h3" variant="displayXL">
-                      {stats.key}
+                      {frontmatter.propertiesSold}
+
                     </Text>
                   </dd>
                 </div>
-              </>
-            ))
-          }
+                <div class="flex flex-col-reverse gap-y-3 ">
+                  <dt
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    class="text-base-500"
+                  >
+                    <Text tag="h3" variant="textBase">
+                      Average Time on Market
+                    </Text>
+                  </dt>
+                  <dd
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
+                    class=" text-base-900 "
+                  >
+                    <Text tag="h3" variant="displayXL">
+                      {frontmatter.marketTime}
+
+                    </Text>
+                  </dd>
+                </div>
+                <div class="flex flex-col-reverse gap-y-3 ">
+                  <dt
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    class="text-base-500"
+                  >
+                    <Text tag="h3" variant="textBase">
+                      Highest Sale Value
+                    </Text>
+                  </dt>
+                  <dd
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
+                    class=" text-base-900 "
+                  >
+                    <Text tag="h3" variant="displayXL">
+                      R{formatNumber(frontmatter.maxSale)}
+                    </Text>
+                  </dd>
+                </div>
+              
         </dl>
         <div
-          class="lg:col-span-2 2xl:col-start-2"
+          class="mt-6 lg:mt-1 lg:col-span-2 2xl:col-start-2"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <Text tag="h3" variant="displaySM" class="text-base-900">
+          <Text tag="h3" variant="displayLG" class="text-base-900">
             Who is {frontmatter.name}
           </Text>
           <Wrapper variant="prose" class="mt-6">
@@ -189,7 +244,7 @@ const { frontmatter } = Astro.props;
           </Wrapper>
         </div>
       </div>
-      <div class="grid lg:grid-cols-3 pt-8 mt-40 border-t border-base-200">
+      <!-- <div class="grid lg:grid-cols-3 pt-8 mt-40 border-t border-base-200">
         <dl
           class="lg:col-span-2 lg:col-start-2"
           data-aos="fade-up"
@@ -201,7 +256,7 @@ const { frontmatter } = Astro.props;
           <dd class="mt-6 t text-base-500">
             <Text tag="h3" variant="textBase">
               {frontmatter.name} has been the main realtor for many of our clients.
-              This are the properties that she has sold.
+              These are the properties that she has sold.
             </Text>
           </dd>
         </dl>
@@ -222,17 +277,25 @@ const { frontmatter } = Astro.props;
             ))
           }
         </div>
-      </div>
+      </div> -->
     </Wrapper>
   </section>
   <section>
     <div class="px-8 pb-12">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-24 2xl:gap-8 pt-8 mt-40">
         <div class="bg-base-50 2xl:p-20 p-8">
+          <Text
+            tag="h3"
+            variant="textXL"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            class=" text-base-900">
+            Get in touch
+          </Text>
           <Image
-            class="aspect-square object-cover object-top"
-            src={frontmatter.avatar.url}
-            alt={frontmatter.avatar.alt}
+            class="aspect-square object-cover object-top mt-8"
+            src={frontmatter.avatar}
+            alt={frontmatter.name}
           />
           <div>
             <Text
@@ -255,7 +318,7 @@ const { frontmatter } = Astro.props;
             </Text>
           </div>
         </div>
-        <div class="lg:col-span-2 flex flex-col h-full justify-between">
+        <div class="lg:col-span-2 flex flex-col h-full justify-between p-8">
           <form>
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
               <div>
@@ -344,7 +407,7 @@ const { frontmatter } = Astro.props;
             </div>
           </form>
           <div
-            class="mt-40 pt-8 border-t border-base-200 text-base-500 space-y-4"
+            class="mt-10 pt-8 border-t border-base-200 text-base-500 space-y-4"
           >
             <Text tag="p" variant="textXS">
               Yes, I would like more information from Habitat Realty. Please use and/or share my information with a Habitat Realty's

@@ -49,6 +49,9 @@ content:
       - name: marketTime
         label: Average Time on Market
         type: string
+      - name: maxSale
+        label: Highest Sale Value
+        type: number
       - name: areaServed
         label: Areas Served
         type: select

@@ -5,7 +5,7 @@ const posts = await Promise.all(
     name: post.data.name,
     office: post.data.office,
     role: post.data.role,
-    avatar: post.data.avatar.url,
+    avatar: post.data.avatar,
     slug: post.slug,
   }))
 );

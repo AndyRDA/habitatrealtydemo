@@ -14,6 +14,7 @@ languages:
   - isiXhosa
 propertiesSold: 13
 marketTime: 25 Days
+maxSale: 22000000
 areaServed:
   - Cape Town
 office: "Habitat Realty "

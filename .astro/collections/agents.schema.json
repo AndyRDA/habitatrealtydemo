@@ -31,6 +31,9 @@
         "marketTime": {
           "type": "string"
         },
+        "maxSale": {
+          "type": "number"
+        },
         "areaServed": {
           "type": "array",
           "items": {
@@ -44,6 +47,9 @@
           "type": "string"
         },
         "avatar": {
+          "type": "string"
+        },
+        "avatarLg": {
           "type": "string"
         },
         "gallery": {
@@ -65,10 +71,12 @@
         "languages",
         "propertiesSold",
         "marketTime",
+        "maxSale",
         "areaServed",
         "office",
         "officeAddress",
-        "avatar"
+        "avatar",
+        "avatarLg"
       ],
       "additionalProperties": false
     }
