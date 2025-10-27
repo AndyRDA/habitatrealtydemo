@@ -20,20 +20,19 @@ const { name, role, officeAddress, office, phone, email, avatar, url } = {
 	href={url}
 	title={name}
 	aria-label={name}
-	class="relative isolate flex flex-col gap-8 lg:flex-row text-sm 2xl:text-base
+	class="relative isolate flex flex-col gap-8 md:flex-row text-sm 2xl:text-base
   py-8"
 >
-	<div
-		class="relative aspect-[4/4] sm:aspect-[16/12] lg:aspect-square lg:shrink-0"
-	>
-		<Image
-			width={400}
-			height={400}
-			src={avatar}
-			alt={name}
-			class="absolute inset-0 h-full w-full object-cover"
-		/>
-		<div class="absolute inset-0"></div>
+	<div class="relative w-[10em] lg:shrink-0">
+		<div class="aspect-square ">
+			<Image
+				width={400}
+				height={400}
+				src={avatar}
+				alt={name}
+				class="h-full w-full object-contain object-center rounded-sm"
+			/>
+		</div>
 	</div>
 	<div class="flex flex-col w-full">
 		<Text tag="h3" variant="textLG" class="font-medium text-base-900">
@@ -48,9 +47,11 @@ const { name, role, officeAddress, office, phone, email, avatar, url } = {
 		<Text tag="p" variant="textSM" class="text-base-500">
 			{email}
 		</Text>
-    <!-- <Text tag="a" variant="textSM" class="text-base-500" href={`https://wa.me/+27${phone}`}>
-      Chat on WhatsApp
-    </Text> -->
+    <!-- <div>
+      <Text tag="a" variant="textSM" class="text-base-500" href={`https://wa.me/+27${phone}`}>
+        Chat on WhatsApp
+      </Text>
+    </div> -->
 		<!-- <Text tag="p" variant="textSM" class="text-base-500">
 			WhatsApp {formatPhoneNumber(phone)}
 		</Text> -->
