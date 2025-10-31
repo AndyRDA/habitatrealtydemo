@@ -92,7 +92,7 @@ content:
     type: collection # Specifies this is a list of multiple entries [4]
     filename: '{fields.listingNumber}-{fields.title}.md' # Pattern for saving files (e.g., 116494858-3-bedroom-house.md) [4]
     view:
-      fields: [title, price, listingNumber, pubDate, isLive] # Fields visible in the list view [5]
+      fields: [projectName, title, price, listingNumber, pubDate, isLive] # Fields visible in the list view [5]
     fields:
       # Core Listing Information
       - name: projectName
