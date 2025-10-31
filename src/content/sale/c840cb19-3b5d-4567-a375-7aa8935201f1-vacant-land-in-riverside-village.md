@@ -21,4 +21,15 @@ hasFibre: false
 hasSolar: false
 hasBackupPower: false
 hasADU: false
+descTitle: Vacant Land in Riverside Village
+mainImage: src/images/sales/Riverside Village/Riversidevillage (1).jpg
+aboutImages:
+  - src/images/sales/Riverside Village/Riversidevillage (1).jpg
+  - src/images/sales/Riverside Village/Riversidevillage (2).jpg
+  - src/images/sales/Riverside Village/Riversidevillage (3).jpg
+  - src/images/sales/Riverside Village/Riversidevillage (4).jpg
+  - src/images/sales/Riverside Village/Riversidevillage (5).jpg
 ---
+Build you own dream home within the guidelines of the Riverside development. This plot has views along the green belt and offers a NE facing position. With houses already built up next to it, there is no element of surprise.
+
+Located in Kommetjie, Riverside Village offers a convenient and well-connected lifestyle in the South Peninsula. With a blend of natural beauty and modern conveniences, it’s perfectly suited for those who work remotely or lead an active lifestyle.
