@@ -240,7 +240,7 @@ content:
     type: collection
     filename: '{fields.listingNumber}-{fields.title}.md'
     view:
-      fields: [listingNumber, title, rentalPrice, occupationDate] # Fields visible in list view
+      fields: [projectName, title, rentalPrice, occupationDate, pubDate, isLive] # Fields visible in list view
     fields:
       # Core Listing Information
       - name: projectName
