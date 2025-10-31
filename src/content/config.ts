@@ -35,6 +35,7 @@ const sale = defineCollection({
 			// --- Core Listing Information ---
 			projectName: z.string(),
 			isLive: z.boolean(),
+			status: z.enum(["For Sale", "Under Offer", "Sold", "Reduced"]),
 			title: z.string(),
 			address: z.string(),
 			location: z.string(),

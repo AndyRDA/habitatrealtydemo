@@ -101,6 +101,11 @@ content:
       - name: isLive
         label: Publish to site
         type: boolean
+      - name: status
+        label: Property Status
+        type: select
+        options:
+          values: ["For Sale", "Under Offer", "Sold", "Reduced"]
       - name: title
         label: Property Title (e.g., 3 Bedroom House for Sale)
         type: string
