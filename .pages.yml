@@ -151,6 +151,9 @@ content:
       - name: levies
         label: Levies
         type: number
+      - name: rates
+        label: Rates and Taxes
+        type: number
       - name: bedrooms
         label: Bedrooms
         type: number
