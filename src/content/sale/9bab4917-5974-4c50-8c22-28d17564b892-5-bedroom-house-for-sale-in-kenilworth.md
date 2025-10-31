@@ -13,7 +13,6 @@ pubDate: 2025/10/09
 agent: Bronwyn Henning
 propertyType: House
 zoning: General Residential
-levies: 2250
 bedrooms: 5
 bathrooms: 3
 parking: 4
@@ -47,6 +46,7 @@ aboutImages:
   - src/images/sales/Alexton House/Alexton House (9).jpg
   - src/images/sales/Alexton House/Alexton House (8).jpg
   - src/images/sales/Alexton House/Alexton House (7).jpg
+rates: 2250
 ---
 SOLE MANDATE
 
