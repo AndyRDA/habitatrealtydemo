@@ -13,6 +13,7 @@ import { getCollection } from "astro:content";
 const forRent = (await getCollection('rentals'))
   .filter(post => post.data.isLive)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const propertyTypes = Array.from(new Set(forRent.map(p => p.data.propertyType).filter(Boolean))).sort();
 ---
 
 <BaseLayout>
@@ -37,11 +38,86 @@ const forRent = (await getCollection('rentals'))
       <div class="mt-8">
         <ForRentSearch />
       </div>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 duration-500"
-      >
-        {forRent.map((post) => <ForRentEntry post={post} />)}
+      <div class="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <label for="filterTypeRent" class="text-sm text-base-500">Filter</label>
+          <select id="filterTypeRent" class="h-10 border border-base-200 rounded px-3 pr-12 text-sm">
+            <option value="">All types</option>
+            {propertyTypes.map((t) => (
+              <option value={t}>{t}</option>
+            ))}
+          </select>
+        </div>
+        <div class="flex items-center gap-3">
+          <label for="sortSelectRent" class="text-sm text-base-500">Sort by</label>
+          <select id="sortSelectRent" class="h-10 border border-base-200 rounded px-3 pr-12 text-sm">
+            <option value="date_desc">Newest</option>
+            <option value="date_asc">Oldest</option>
+            <option value="price_asc">Price: Low → High</option>
+            <option value="price_desc">Price: High → Low</option>
+            <option value="size_desc">Size: Large → Small</option>
+            <option value="size_asc">Size: Small → Large</option>
+            <option value="beds_desc">Bedrooms: Many → Few</option>
+            <option value="beds_asc">Bedrooms: Few → Many</option>
+          </select>
+        </div>
       </div>
+
+      <div id="propertyListRent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 duration-500">
+        {forRent.map((post) => (
+          <div
+            class="property-item"
+            data-price={post.data.price ?? ''}
+            data-size={post.data.erfSize ?? post.data.floorSize ?? ''}
+            data-date={post.data.pubDate}
+            data-beds={post.data.bedrooms ?? ''}
+            data-type={post.data.propertyType ?? ''}
+          >
+            <ForRentEntry post={post} />
+          </div>
+        ))}
+      </div>
+
+      <script type="module">
+  const sortSelectRent = document.getElementById('sortSelectRent');
+  const filterTypeRent = document.getElementById('filterTypeRent');
+  const listRent = document.getElementById('propertyListRent');
+
+        function parseNumber(v) {
+          if (v === null || v === undefined || v === '') return NaN;
+          return Number(String(v).replace(/[, ]+/g, ''));
+        }
+        function parseDate(v) { if (!v) return new Date(0); return new Date(v); }
+
+        function sortItemsRent(mode) {
+          const items = Array.from(listRent.querySelectorAll('.property-item'));
+          items.sort((a, b) => {
+            if (mode === 'date_desc') return b.dataset.date - a.dataset.date;
+            if (mode === 'date_asc') return parseDate(a.dataset.date) - parseDate(b.dataset.date);
+            if (mode === 'price_asc') return (a.dataset.price || 0) - (b.dataset.price || 0);
+            if (mode === 'price_desc') return (b.dataset.price || 0) - (a.dataset.price || 0);
+            if (mode === 'size_asc') return (a.dataset.size || 0) - (b.dataset.size || 0);
+            if (mode === 'size_desc') return (b.dataset.size || 0) - (a.dataset.size || 0);
+            if (mode === 'beds_asc') return (a.dataset.beds || 0) - (b.dataset.beds || 0);
+            if (mode === 'beds_desc') return (b.dataset.beds || 0) - (a.dataset.beds || 0);
+            return 0;
+          });
+          items.forEach((it) => listRent.appendChild(it));
+        }
+
+        function applyFilterAndSortRent() {
+          const filter = filterTypeRent.value;
+          Array.from(listRent.querySelectorAll('.property-item')).forEach((it) => {
+            const type = it.dataset.type || '';
+            if (!filter || filter === '' || filter === type) it.style.display = '';
+            else it.style.display = 'none';
+          });
+          sortItemsRent(sortSelectRent.value);
+        }
+
+        sortSelectRent.addEventListener('change', applyFilterAndSortRent);
+        filterTypeRent.addEventListener('change', applyFilterAndSortRent);
+      </script>
     </Wrapper>
   </section>
   <Sell />

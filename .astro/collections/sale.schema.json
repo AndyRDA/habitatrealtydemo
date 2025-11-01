@@ -10,6 +10,15 @@
         "isLive": {
           "type": "boolean"
         },
+        "status": {
+          "type": "string",
+          "enum": [
+            "For Sale",
+            "Under Offer",
+            "Sold",
+            "Reduced"
+          ]
+        },
         "title": {
           "type": "string"
         },
@@ -64,6 +73,9 @@
           ]
         },
         "levies": {
+          "type": "number"
+        },
+        "rates": {
           "type": "number"
         },
         "zoning": {
@@ -127,6 +139,7 @@
       "required": [
         "projectName",
         "isLive",
+        "status",
         "title",
         "address",
         "location",

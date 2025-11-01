@@ -97,46 +97,13 @@ if(frontmatter.propertyType === 'Land') {
         />
         <a
           href="#details"
-          class="absolute bg-white top-0 right-0 p-8 w-full md:max-w-xs flex items-center gap-2"
+          class="absolute bg-white top-0 right-0 p-8 landscape:p-4  landscape:w-auto md:max-w-xs flex items-center gap-2"
         >
           <span> &darr; </span>
-          <span> Learn more</span>
+          <span> Details</span>
         </a>
       </div>
-      <div
-        class="divide-y divide-base-200 space-y-40 scroll-mt-24"
-        id="details"
-      >
-        <div class="grid lg:grid-cols-3 pt-8">
-          <Text tag="h3" variant="textXL" class="font-medium text-base-900"
-            >Details</Text
-          >
-          <dl
-            class="lg:col-span-2 divide-y divide-base-200 border-t border-base-200"
-          >
-            {
-              propertyDetails.map((detail) => (
-                <div class="grid lg:grid-cols-3 py-2 2xl:text-lg">
-                  <dt class="text-base-900 ">{detail.key}</dt>
-                  <dd class="text-base-500 lg:col-span-2">{detail.value}</dd>
-                </div>
-              ))
-            }
-            <!-- {
-              frontmatter.specs.map((specs) => (
-                <>
-                  <div class="grid lg:grid-cols-3 py-2 2xl:text-lg">
-                    <>
-                      <dt class="text-base-900 ">{specs.key}</dt>
-                      <dd class="text-base-500 lg:col-span-2">{specs.value}</dd>
-                    </>
-                  </div>
-                </>
-              ))
-            } -->
-          </dl>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 py-8">
           <Text tag="h3" variant="textXL" class="font-medium text-base-900"
             >About</Text
           >
@@ -217,6 +184,40 @@ if(frontmatter.propertyType === 'Land') {
             </div>
           </div>
         </div>
+      <div
+        class="divide-y divide-base-200 space-y-40 scroll-mt-24"
+        id="details"
+      >
+        <div class="grid lg:grid-cols-3 pt-8">
+          <Text tag="h3" variant="textXL" class="font-medium text-base-900"
+            >Details</Text
+          >
+          <dl
+            class="lg:col-span-2 divide-y divide-base-200 border-t border-base-200"
+          >
+            {
+              propertyDetails.map((detail) => (
+                <div class="grid lg:grid-cols-3 py-2 2xl:text-lg">
+                  <dt class="text-base-900 ">{detail.key}</dt>
+                  <dd class="text-base-500 lg:col-span-2">{detail.value}</dd>
+                </div>
+              ))
+            }
+            <!-- {
+              frontmatter.specs.map((specs) => (
+                <>
+                  <div class="grid lg:grid-cols-3 py-2 2xl:text-lg">
+                    <>
+                      <dt class="text-base-900 ">{specs.key}</dt>
+                      <dd class="text-base-500 lg:col-span-2">{specs.value}</dd>
+                    </>
+                  </div>
+                </>
+              ))
+            } -->
+          </dl>
+        </div>
+        
         <!-- <div class="grid lg:grid-cols-3 pt-8">
           <Text tag="h3" variant="textXL" class="font-medium text-base-900"
             >Surrounding</Text
